@@ -6,5 +6,7 @@ CMakeFiles/libModulos.dir/sources/src/Game.cpp.o: ../sources/src/Game.cpp
 
 CMakeFiles/libModulos.dir/sources/src/Map.cpp.o: ../sources/src/Map.cpp
 
+CMakeFiles/libModulos.dir/sources/src/Player.cpp.o: ../sources/headers/Animation.h
+CMakeFiles/libModulos.dir/sources/src/Player.cpp.o: ../sources/headers/Player.h
 CMakeFiles/libModulos.dir/sources/src/Player.cpp.o: ../sources/src/Player.cpp
 

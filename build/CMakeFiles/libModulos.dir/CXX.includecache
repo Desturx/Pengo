@@ -6,11 +6,25 @@
 
 #IncludeRegexTransform: 
 
+../sources/headers/Animation.h
+SFML/Graphics.hpp
+-
+iostream
+-
+
 ../sources/headers/Game.h
 SFML/Graphics.hpp
 -
 iostream
 -
+
+../sources/headers/Player.h
+SFML/Graphics.hpp
+-
+iostream
+-
+Animation.h
+../sources/headers/Animation.h
 
 /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp
 Game.h
@@ -19,4 +33,6 @@ Game.h
 /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp
 
 /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp
+Player.h
+/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.h
 
