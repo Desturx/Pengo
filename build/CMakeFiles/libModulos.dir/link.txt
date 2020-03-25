@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibModulos.a  CMakeFiles/libModulos.dir/sources/src/Game.cpp.o CMakeFiles/libModulos.dir/sources/src/Map.cpp.o CMakeFiles/libModulos.dir/sources/src/Player.cpp.o
+/usr/bin/ranlib liblibModulos.a
