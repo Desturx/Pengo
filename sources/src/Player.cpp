@@ -6,12 +6,16 @@ Player::Player(sf::Vector2f position)
 
     hitbox = sf::RectangleShape(sf::Vector2f(16.f, 16.f));
     hitbox.setFillColor(sf::Color::Red);
-
     x = 0;
     y = 0;
+    //hitbox.setOrigin(16/2, 16/2);
+    hitbox.setPosition(x, y);
 
     //movespeed = 16.0/ tilesize; // se mueve una sola vez por bloque, si fuera 32 se movería 2 bloques;
-    movespeed = 0.11f;
+    
+    movespeed = 1.5f;
+
+
     for(int i = 0; i < 4; i++)
         move[i] = false;
     
@@ -95,7 +99,7 @@ void Player::moving(float elapsedTime)
     if(walking) {
         if(move[UP]) 
         {
-            y -= movespeed*elapsedTime;
+            y -= movespeed;
 
             if(y <= nextspot) {
                 y = nextspot;
@@ -106,7 +110,7 @@ void Player::moving(float elapsedTime)
 
         if(move[DOWN]) 
         {
-            y += movespeed*elapsedTime;
+            y += movespeed;
 
             if(y >= nextspot) {
                 y = nextspot;
@@ -118,7 +122,7 @@ void Player::moving(float elapsedTime)
 
         if(move[LEFT]) 
         {
-            x -= movespeed*elapsedTime;
+            x -= movespeed;
 
             if(x <= nextspot) {
                 x = nextspot;
@@ -129,10 +133,10 @@ void Player::moving(float elapsedTime)
 
         if(move[RIGHT]) 
         {
-            x += movespeed*elapsedTime;
+            x += movespeed;
 
-            if(hitbox.getPosition().x >= nextspot) {
-                hitbox.setPosition(nextspot, hitbox.getPosition().y);
+            if(x >= nextspot) {
+                x = nextspot;
                 walking = false;
                 move[RIGHT] = false;
             }
@@ -142,12 +146,18 @@ void Player::moving(float elapsedTime)
 }
 
 
+
 void Player::update(float elapsedTime)
 {
 
     setMovement();
     moving(elapsedTime);
     hitbox.setPosition(x, y);
+
+
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::F)) {
+        std::cout << "POS ACTUAL: " << hitbox.getPosition().x << ", " << hitbox.getPosition().y << std::endl;
+    }
 
 
     // Updating the animation

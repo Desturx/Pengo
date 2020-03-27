@@ -19,8 +19,7 @@ class Player {
         bool walking;
         int nextspot;
 
-        int nextX;
-        int nextY;
+        bool isMoving = false;
 
 
         // Animations
@@ -34,7 +33,10 @@ class Player {
         virtual ~Player();
         void setMovement();
         void moving(float elapsedTime);
-        
+
+        void test1();
+
+
         void update(float elapsedTime);
         void draw(sf::RenderWindow& window);
 };
