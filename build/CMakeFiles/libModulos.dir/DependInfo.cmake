@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Game.cpp.o"
-  "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Map.cpp.o"
-  "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Player.cpp.o"
+  "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Game.cpp.o"
+  "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Map.cpp.o"
+  "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Player.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

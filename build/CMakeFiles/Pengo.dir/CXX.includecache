@@ -6,21 +6,37 @@
 
 #IncludeRegexTransform: 
 
+../sources/headers/Animation.h
+SFML/Graphics.hpp
+-
+iostream
+-
+
 ../sources/headers/Game.h
 SFML/Graphics.hpp
 -
 iostream
 -
+Player.h
+../sources/headers/Player.h
 
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/include/config.h
+../sources/headers/Player.h
+SFML/Graphics.hpp
+-
+iostream
+-
+Animation.h
+../sources/headers/Animation.h
 
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/main.cpp
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/include/config.h
+
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/main.cpp
 SFML/Graphics.hpp
 -
 iostream
 -
 include/config.h
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/include/config.h
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/include/config.h
 Game.h
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/Game.h
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/Game.h
 

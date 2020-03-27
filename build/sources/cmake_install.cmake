@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources
+# Install script for directory: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

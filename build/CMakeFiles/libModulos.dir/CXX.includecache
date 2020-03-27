@@ -17,6 +17,8 @@ SFML/Graphics.hpp
 -
 iostream
 -
+Player.h
+../sources/headers/Player.h
 
 ../sources/headers/Player.h
 SFML/Graphics.hpp
@@ -26,13 +28,13 @@ iostream
 Animation.h
 ../sources/headers/Animation.h
 
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp
 Game.h
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.h
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.h
 
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp
 
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp
 Player.h
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.h
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.h
 

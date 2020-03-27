@@ -1,6 +1,6 @@
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/rebuild_cache.dir
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/Pengo.dir
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/edit_cache.dir
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/sources/CMakeFiles/edit_cache.dir
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/sources/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/Pengo.dir
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/edit_cache.dir
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/sources/CMakeFiles/edit_cache.dir
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/sources/CMakeFiles/rebuild_cache.dir

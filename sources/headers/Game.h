@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
+#include "Player.h"
+
 
 #define updateTimePS 1000/30
 
@@ -16,6 +18,7 @@ class Game {
     private:
 
         sf::RenderWindow window;
+        
 
         // Clocks
         sf::Clock updatesPS;
@@ -26,6 +29,8 @@ class Game {
         sf::Event event;
 
         // Game objects
+        Player* player;
+
 
 
 

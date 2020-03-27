@@ -3,6 +3,8 @@
 Game::Game()
 {
     window.create(sf::VideoMode(800, 720), "Pengo");
+    window.setVerticalSyncEnabled(true);
+    //window.setFramerateLimit(30);
 }
 
 
@@ -34,6 +36,8 @@ void Game::declarations()
     timesUpdate = updatesPS.getElapsedTime();
 
 
+    player = new Player(sf::Vector2f(100.f, 100.f));
+
 
 }
 
@@ -55,13 +59,13 @@ void Game::events()
 
 void Game::updateGame(float elapsedTime)
 {
-
+    player->update(elapsedTime);
 }
 
 void Game::render()
 {
     window.clear();
 
-
+    player->draw(window);
     window.display();
 }
