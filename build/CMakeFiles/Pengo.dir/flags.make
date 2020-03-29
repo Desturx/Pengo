@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++1y -Wall -Wextra -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers" 
+CXX_INCLUDES = -I"/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers" 
 

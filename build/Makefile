@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo"
+CMAKE_SOURCE_DIR = "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build"
+CMAKE_BINARY_DIR = "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -244,6 +244,33 @@ sources/src/Player.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Player.cpp.s
 .PHONY : sources/src/Player.cpp.s
 
+sources/src/tinyxml2.o: sources/src/tinyxml2.cpp.o
+
+.PHONY : sources/src/tinyxml2.o
+
+# target to build an object file
+sources/src/tinyxml2.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o
+.PHONY : sources/src/tinyxml2.cpp.o
+
+sources/src/tinyxml2.i: sources/src/tinyxml2.cpp.i
+
+.PHONY : sources/src/tinyxml2.i
+
+# target to preprocess a source file
+sources/src/tinyxml2.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.i
+.PHONY : sources/src/tinyxml2.cpp.i
+
+sources/src/tinyxml2.s: sources/src/tinyxml2.cpp.s
+
+.PHONY : sources/src/tinyxml2.s
+
+# target to generate assembly for a file
+sources/src/tinyxml2.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.s
+.PHONY : sources/src/tinyxml2.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -266,6 +293,9 @@ help:
 	@echo "... sources/src/Player.o"
 	@echo "... sources/src/Player.i"
 	@echo "... sources/src/Player.s"
+	@echo "... sources/src/tinyxml2.o"
+	@echo "... sources/src/tinyxml2.i"
+	@echo "... sources/src/tinyxml2.s"
 .PHONY : help
 
 

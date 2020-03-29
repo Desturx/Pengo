@@ -34,9 +34,6 @@ class Player {
         void setMovement();
         void moving(float elapsedTime);
 
-        void test1();
-
-
         void update(float elapsedTime);
         void draw(sf::RenderWindow& window);
 };

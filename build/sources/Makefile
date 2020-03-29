@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo"
+CMAKE_SOURCE_DIR = "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build"
+CMAKE_BINARY_DIR = "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/sources/CMakeFiles/progress.marks"
-	cd "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(MAKE) -f CMakeFiles/Makefile2 sources/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" 0
+	cd "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/sources/CMakeFiles/progress.marks"
+	cd "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(MAKE) -f CMakeFiles/Makefile2 sources/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(MAKE) -f CMakeFiles/Makefile2 sources/clean
+	cd "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(MAKE) -f CMakeFiles/Makefile2 sources/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,17 +97,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(MAKE) -f CMakeFiles/Makefile2 sources/preinstall
+	cd "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(MAKE) -f CMakeFiles/Makefile2 sources/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(MAKE) -f CMakeFiles/Makefile2 sources/preinstall
+	cd "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(MAKE) -f CMakeFiles/Makefile2 sources/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -129,6 +129,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
