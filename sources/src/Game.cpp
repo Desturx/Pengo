@@ -36,7 +36,7 @@ void Game::declarations()
     timesUpdate = updatesPS.getElapsedTime();
 
 
-    player = new Player(sf::Vector2f(100.f, 100.f));
+    player = new Player(8,8);
 
 
 }

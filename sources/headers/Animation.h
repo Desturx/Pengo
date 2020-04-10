@@ -16,7 +16,7 @@ class Animation {
         float animVel;
 
     public:
-        Animation(char* textureName, int sprSize, float animationVelocity);
+        Animation(std::string textureName, int sprSize, float animationVelocity);
         virtual ~Animation();
 
         void setFrames(sf::IntRect firstFrame, sf::IntRect lastFrame);

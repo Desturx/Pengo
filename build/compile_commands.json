@@ -21,6 +21,11 @@
 },
 {
   "directory": "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build",
+  "command": "/usr/bin/clang++-3.8    -I\"/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o -c \"/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp\"",
+  "file": "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp"
+},
+{
+  "directory": "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build",
   "command": "/usr/bin/clang++-3.8    -I\"/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o -c \"/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp\"",
   "file": "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp"
 }

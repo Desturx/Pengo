@@ -23,15 +23,23 @@ class Player {
 
 
         // Animations
-        Animation* currentAnim;
         // Animation run = Animation("./resources/", size, velocity);
-       
-       
+
+        Animation* currentAnim;
+        
+        Animation run_izq = Animation("./resources/pengo.png", 16, 0.15f);
+        Animation run_der = Animation("./resources/pengo.png", 16, 0.15f);
+        Animation run_up = Animation("./resources/pengo.png", 16, 0.15f);
+        Animation run_down = Animation("./resources/pengo.png", 16, 0.15f);
+        
+
 
     public:
-        Player(sf::Vector2f position);
+        Player(int posx, int posy);
         virtual ~Player();
         void setMovement();
+        void loadAnimations();
+        void changeAnimation(Animation* newAnimation);
         void moving(float elapsedTime);
 
         void update(float elapsedTime);

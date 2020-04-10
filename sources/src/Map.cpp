@@ -20,7 +20,7 @@ Map::~Map()
     delete tileMap;
 
     for(int i = 0; i < numlayers; i++) {
-        for(int j = 0; j = height; j++) {
+        for(int j = 0; j < height; j++) {
             for(int z = 0; z < width; z++) {
                 delete mapSprite[i][j][z];
             }

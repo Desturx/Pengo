@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player(sf::Vector2f position)
+Player::Player(int posx, int posy)
 {
     std::cout << "Creating the player" << std::endl;
 
@@ -8,6 +8,7 @@ Player::Player(sf::Vector2f position)
     hitbox.setFillColor(sf::Color::Red);
     x = 0;
     y = 0;
+
     //hitbox.setOrigin(16/2, 16/2);
     hitbox.setPosition(x, y);
 
@@ -23,30 +24,34 @@ Player::Player(sf::Vector2f position)
 
     // hitbox.setPosition(position);
 
-    // SETTING THE ANIMATIONS
-    /*
-        ================= INFO ==================
-        posx = X position for the top left corner
-        posy = Y position for the top left corner
-        width = width of the sprite
-        heigth = heigth of the sprite
-        =========================================
-
-        run.setFrames(sf::IntRect(posX,posY, width, height))
-    */
-
-
     // SETTING THE ACTUAL ANIMATION
-    /*
-        currentAnim = &run;
-        currentAnim->setPosition(pos);
-    */ 
+        loadAnimations();
+        currentAnim = &run_der;
+        currentAnim->setPosition(sf::Vector2f(8, 8));
+}
+
+void Player::loadAnimations()
+{
+    using namespace sf;
+
+    run_up.setFrames(IntRect(16*4, 0, 16, 16), IntRect(16*5, 0, 16, 16));
+    run_down.setFrames(IntRect(0,0, 16, 16), IntRect(16, 0, 16, 16));
+    run_izq.setFrames(IntRect(16*2, 0, 16, 16), IntRect(16*3, 0, 16, 16));
+    run_der.setFrames(IntRect(16*6, 0, 16, 16), IntRect(16*7, 0, 16, 16));
+
+}
+
+void Player::changeAnimation(Animation* newAnimation)
+{
+    currentAnim = newAnimation;
+    currentAnim->setPosition(hitbox.getPosition());
 }
 
 
 Player::~Player()
 {
     // Destructor
+    delete currentAnim;
 }
 
 void Player::setMovement() 
@@ -100,6 +105,7 @@ void Player::moving(float elapsedTime)
         if(move[UP]) 
         {
             y -= movespeed;
+            changeAnimation(&run_up);
 
             if(y <= nextspot) {
                 y = nextspot;
@@ -111,6 +117,7 @@ void Player::moving(float elapsedTime)
         if(move[DOWN]) 
         {
             y += movespeed;
+            changeAnimation(&run_down);
 
             if(y >= nextspot) {
                 y = nextspot;
@@ -123,7 +130,7 @@ void Player::moving(float elapsedTime)
         if(move[LEFT]) 
         {
             x -= movespeed;
-
+            changeAnimation(&run_izq);
             if(x <= nextspot) {
                 x = nextspot;
                 walking = false;
@@ -134,7 +141,7 @@ void Player::moving(float elapsedTime)
         if(move[RIGHT]) 
         {
             x += movespeed;
-
+            changeAnimation(&run_der);
             if(x >= nextspot) {
                 x = nextspot;
                 walking = false;
@@ -153,21 +160,20 @@ void Player::update(float elapsedTime)
     setMovement();
     moving(elapsedTime);
     hitbox.setPosition(x, y);
+    currentAnim->setPosition(sf::Vector2f(x, y));
+    currentAnim->update();
 
-
+    /*
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::F)) {
         std::cout << "POS ACTUAL: " << hitbox.getPosition().x << ", " << hitbox.getPosition().y << std::endl;
     }
-
-
+    */
     // Updating the animation
-    //currentAnim->update()
     
-
 }
 
 void Player::draw(sf::RenderWindow& window)
 {
     window.draw(hitbox);
-    // currentAnim->draw(window);
+    currentAnim->draw(window);
 }

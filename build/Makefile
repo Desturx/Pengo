@@ -163,6 +163,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/Pengo.dir/build.make CMakeFiles/Pengo.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+sources/src/Animation.o: sources/src/Animation.cpp.o
+
+.PHONY : sources/src/Animation.o
+
+# target to build an object file
+sources/src/Animation.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o
+.PHONY : sources/src/Animation.cpp.o
+
+sources/src/Animation.i: sources/src/Animation.cpp.i
+
+.PHONY : sources/src/Animation.i
+
+# target to preprocess a source file
+sources/src/Animation.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Animation.cpp.i
+.PHONY : sources/src/Animation.cpp.i
+
+sources/src/Animation.s: sources/src/Animation.cpp.s
+
+.PHONY : sources/src/Animation.s
+
+# target to generate assembly for a file
+sources/src/Animation.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Animation.cpp.s
+.PHONY : sources/src/Animation.cpp.s
+
 sources/src/Game.o: sources/src/Game.cpp.o
 
 .PHONY : sources/src/Game.o
@@ -284,6 +311,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... sources/src/Animation.o"
+	@echo "... sources/src/Animation.i"
+	@echo "... sources/src/Animation.s"
 	@echo "... sources/src/Game.o"
 	@echo "... sources/src/Game.i"
 	@echo "... sources/src/Game.s"

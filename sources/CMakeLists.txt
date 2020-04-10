@@ -3,6 +3,7 @@ target_sources(libModulos PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/src/Game.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/Map.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/Player.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/Animation.cpp"
     "${CMAKE_CURRENT_SOURCE_DIR}/src/tinyxml2.cpp"
     
 )
