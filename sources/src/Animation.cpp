@@ -31,19 +31,47 @@ void Animation::update()
 {
     //std::cout << "se llama al update" << std::endl;
     float delta = clock.getElapsedTime().asSeconds();
-    if(delta >= animVel) {
+
+    if(delta >= animVel && isPlaying && !finished) {
         clock.restart();
-        if(actualF.left == lastF.left) {
-            actualF.left = firstF.left;
-        } else {
-            actualF.left += sprSize;
+
+        if(!loop) {
+            if(actualF.left != lastF.left) {
+                actualF.left += sprSize;
+            } else {
+                finished = true;
+            }
+
+        } else if(loop) {
+            if(actualF.left == lastF.left) {
+                actualF.left = firstF.left;
+            } else {
+                actualF.left += sprSize;
+            }
+
+            sprite.setTextureRect(actualF);
         }
 
-        sprite.setTextureRect(actualF);
+        
     }
 
     // Moving the sprite with the character
     // sprite.move(movement*mTime);
+}
+
+void Animation::noLoop() 
+{
+    loop = false;
+}
+
+void Animation::play()
+{
+    isPlaying = true;
+}
+
+void Animation::stop()
+{
+    isPlaying = false;
 }
 
 void Animation::setPosition(sf::Vector2f pos)

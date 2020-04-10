@@ -101,7 +101,11 @@ void Player::setMovement()
 
 void Player::moving(float elapsedTime) 
 {
-    if(walking) {
+    if(walking) 
+    {
+
+        currentAnim->play();
+
         if(move[UP]) 
         {
             y -= movespeed;
@@ -149,6 +153,10 @@ void Player::moving(float elapsedTime)
             }
         }
 
+    } 
+    else 
+    {   
+        currentAnim->stop();
     }
 }
 
