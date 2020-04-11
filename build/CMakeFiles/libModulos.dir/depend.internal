@@ -4,12 +4,19 @@
 CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o
  ../sources/headers/Animation.h
  /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp
+CMakeFiles/libModulos.dir/sources/src/Block.cpp.o
+ ../sources/headers/Block.h
+ /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp
 CMakeFiles/libModulos.dir/sources/src/Game.cpp.o
  ../sources/headers/Animation.h
+ ../sources/headers/Block.h
  ../sources/headers/Game.h
+ ../sources/headers/Map.h
  ../sources/headers/Player.h
+ ../sources/headers/tinyxml2.h
  /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp
 CMakeFiles/libModulos.dir/sources/src/Map.cpp.o
+ ../sources/headers/Block.h
  ../sources/headers/Map.h
  ../sources/headers/tinyxml2.h
  /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp

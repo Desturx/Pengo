@@ -36,6 +36,7 @@ void Animation::update()
         clock.restart();
 
         if(!loop) {
+
             if(actualF.left != lastF.left) {
                 actualF.left += sprSize;
             } else {
@@ -43,12 +44,25 @@ void Animation::update()
             }
 
         } else if(loop) {
-            if(actualF.left == lastF.left) {
-                actualF.left = firstF.left;
+            if(loopNumbers > 0) {
+                // std::cout << "Se ha hecho: " << times << std::endl;
+                if(times <= loopNumbers) {
+                    if(actualF.left == lastF.left) {
+                        actualF.left = firstF.left;
+                        times++;
+                    } else {
+                        actualF.left += sprSize;
+                    }
+                } else {
+                    finished = true;
+                }
             } else {
-                actualF.left += sprSize;
+                if(actualF.left == lastF.left) {
+                    actualF.left = firstF.left;
+                } else {
+                    actualF.left += sprSize;
+                }
             }
-
             sprite.setTextureRect(actualF);
         }
 
@@ -73,6 +87,23 @@ void Animation::stop()
 {
     isPlaying = false;
 }
+
+bool Animation::isFinished() 
+{
+    return finished;
+}
+
+void Animation::loopXtimes(int timesToLoop)
+{
+    loopNumbers = timesToLoop;
+}
+
+void Animation::reset()
+{
+    times = 0;
+    finished = false;
+}
+
 
 void Animation::setPosition(sf::Vector2f pos)
 {

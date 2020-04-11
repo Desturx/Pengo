@@ -16,21 +16,33 @@ class Player {
         float movespeed;
         enum MOVE {UP,DOWN,LEFT,RIGHT};
         bool move[4];
+
+        std::string lastPosition = "RIGHT";
+
         bool walking;
         int nextspot;
 
-        bool isMoving = false;
+        bool playingAnimation = false;
 
 
         // Animations
         // Animation run = Animation("./resources/", size, velocity);
 
         Animation* currentAnim;
+        std::string textureSrc = "./resources/pengo.png";
         
-        Animation run_izq = Animation("./resources/pengo.png", 16, 0.15f);
-        Animation run_der = Animation("./resources/pengo.png", 16, 0.15f);
-        Animation run_up = Animation("./resources/pengo.png", 16, 0.15f);
-        Animation run_down = Animation("./resources/pengo.png", 16, 0.15f);
+        Animation run_left = Animation(textureSrc, 16, 0.15f);
+        Animation run_right = Animation(textureSrc, 16, 0.15f);
+        Animation run_up = Animation(textureSrc, 16, 0.15f);
+        Animation run_down = Animation(textureSrc, 16, 0.15f);
+
+        Animation push_left = Animation(textureSrc, 16, 0.15f);
+        Animation push_right = Animation(textureSrc, 16, 0.15f);
+        Animation push_up = Animation(textureSrc, 16, 0.15f);
+        Animation push_down = Animation(textureSrc, 16, 0.15f);
+
+
+        
         
 
 

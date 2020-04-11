@@ -12,6 +12,10 @@ SFML/Graphics.hpp
 iostream
 -
 
+../sources/headers/Block.h
+SFML/Graphics.hpp
+-
+
 ../sources/headers/Game.h
 SFML/Graphics.hpp
 -
@@ -19,6 +23,18 @@ iostream
 -
 Player.h
 ../sources/headers/Player.h
+Map.h
+../sources/headers/Map.h
+
+../sources/headers/Map.h
+SFML/Graphics.hpp
+-
+iostream
+-
+tinyxml2.h
+../sources/headers/tinyxml2.h
+Block.h
+../sources/headers/Block.h
 
 ../sources/headers/Player.h
 SFML/Graphics.hpp
@@ -27,6 +43,36 @@ iostream
 -
 Animation.h
 ../sources/headers/Animation.h
+
+../sources/headers/tinyxml2.h
+ctype.h
+-
+limits.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stddef.h
+-
+cctype
+-
+climits
+-
+cstdio
+-
+cstdlib
+-
+cstring
+-
+stdint.h
+-
+android/log.h
+-
+assert.h
+-
 
 /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/include/config.h
 

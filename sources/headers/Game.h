@@ -1,7 +1,9 @@
+#pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
 #include "Player.h"
+#include "Map.h"
 
 
 #define updateTimePS 1000/30
@@ -28,8 +30,12 @@ class Game {
         // Event
         sf::Event event;
 
+        // View
+        sf::View view;
+
         // Game objects
         Player* player;
+        Map* actualMap;
 
 
 

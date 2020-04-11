@@ -190,6 +190,33 @@ sources/src/Animation.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Animation.cpp.s
 .PHONY : sources/src/Animation.cpp.s
 
+sources/src/Block.o: sources/src/Block.cpp.o
+
+.PHONY : sources/src/Block.o
+
+# target to build an object file
+sources/src/Block.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Block.cpp.o
+.PHONY : sources/src/Block.cpp.o
+
+sources/src/Block.i: sources/src/Block.cpp.i
+
+.PHONY : sources/src/Block.i
+
+# target to preprocess a source file
+sources/src/Block.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Block.cpp.i
+.PHONY : sources/src/Block.cpp.i
+
+sources/src/Block.s: sources/src/Block.cpp.s
+
+.PHONY : sources/src/Block.s
+
+# target to generate assembly for a file
+sources/src/Block.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Block.cpp.s
+.PHONY : sources/src/Block.cpp.s
+
 sources/src/Game.o: sources/src/Game.cpp.o
 
 .PHONY : sources/src/Game.o
@@ -314,6 +341,9 @@ help:
 	@echo "... sources/src/Animation.o"
 	@echo "... sources/src/Animation.i"
 	@echo "... sources/src/Animation.s"
+	@echo "... sources/src/Block.o"
+	@echo "... sources/src/Block.i"
+	@echo "... sources/src/Block.s"
 	@echo "... sources/src/Game.o"
 	@echo "... sources/src/Game.i"
 	@echo "... sources/src/Game.s"

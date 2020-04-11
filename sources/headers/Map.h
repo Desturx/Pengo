@@ -1,7 +1,8 @@
-
+#pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "tinyxml2.h"
+#include "Block.h"
 
 
 class Map {
@@ -26,6 +27,9 @@ class Map {
         sf::Sprite* tilesetSprite;
         sf::Sprite**** mapSprite;
 
+
+        std::vector<Block*> dest_blocks;
+        
 
     public:
         Map();

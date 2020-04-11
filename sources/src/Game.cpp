@@ -37,6 +37,7 @@ void Game::declarations()
 
 
     player = new Player(8,8);
+    actualMap = new Map();
 
 
 }
@@ -67,5 +68,6 @@ void Game::render()
     window.clear();
 
     player->draw(window);
+    actualMap->draw(window);
     window.display();
 }

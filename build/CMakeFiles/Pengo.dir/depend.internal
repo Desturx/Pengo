@@ -3,7 +3,10 @@
 
 CMakeFiles/Pengo.dir/main.cpp.o
  ../sources/headers/Animation.h
+ ../sources/headers/Block.h
  ../sources/headers/Game.h
+ ../sources/headers/Map.h
  ../sources/headers/Player.h
+ ../sources/headers/tinyxml2.h
  /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/include/config.h
  /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/main.cpp

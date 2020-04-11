@@ -29,6 +29,8 @@ Map::~Map()
         delete mapSprite[i];
     }
     delete mapSprite;
+
+
 }
 
 
@@ -65,7 +67,7 @@ void Map::loadTextures()
 {
     while(tileSetImg) {
         // Load the texture for the map
-        if(!tileSetTexture.loadFromFile("")) {
+        if(!tileSetTexture.loadFromFile("./resources/maps/patron.png")) {
             std::cerr << "Couldn't load the map texture" << std::endl;
             exit(0);
         }
@@ -153,8 +155,18 @@ void Map::createSprites()
 
                 if(gid > 0 && gid < width*height) 
                 {
-                    mapSprite[i][j][k] = new sf::Sprite(tileSetTexture, tilesetSprite[gid].getTextureRect());
-                    mapSprite[i][j][k]->setPosition(k*tilewidth, j*tileHeight);
+                    if(gid == 1) 
+                    {
+                        // COLOCAR LOS SPRITES DE LOS BLOQUES AZULES Y MANDARLOS
+                        Block* newBlock = new Block(tileSetTexture, tilesetSprite[gid].getTextureRect(), sf::Vector2f(k*tilewidth, j*tileHeight) );
+                        dest_blocks.push_back(newBlock);
+                    } 
+                    else 
+                    {
+                        mapSprite[i][j][k] = new sf::Sprite(tileSetTexture, tilesetSprite[gid].getTextureRect());
+                        mapSprite[i][j][k]->setPosition(k*tilewidth, j*tileHeight);
+                    }
+                    
                 } 
                 else
                 {
@@ -180,9 +192,17 @@ void Map::draw(sf::RenderWindow& window)
             for(int x = 0; x < width; x++) {
                 if(mapSprite[l][y][x] != NULL) {
                     window.draw(*(mapSprite[l][y][x]));
+                    //std::cout << "se dibuja" << std::endl;
                 }
             }
         }
+    }
+
+
+    for(unsigned i = 0; i < dest_blocks.size(); i++) {
+        dest_blocks.at(i)->draw(window);
+        // dest_blocks.at(i)->drawGizmo(window);
+
     }
 }
 

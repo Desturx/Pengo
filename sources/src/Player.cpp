@@ -26,7 +26,7 @@ Player::Player(int posx, int posy)
 
     // SETTING THE ACTUAL ANIMATION
         loadAnimations();
-        currentAnim = &run_der;
+        currentAnim = &run_right;
         currentAnim->setPosition(sf::Vector2f(8, 8));
 }
 
@@ -34,17 +34,27 @@ void Player::loadAnimations()
 {
     using namespace sf;
 
+    // RUNNING ANIMATIONS
     run_up.setFrames(IntRect(16*4, 0, 16, 16), IntRect(16*5, 0, 16, 16));
     run_down.setFrames(IntRect(0,0, 16, 16), IntRect(16, 0, 16, 16));
-    run_izq.setFrames(IntRect(16*2, 0, 16, 16), IntRect(16*3, 0, 16, 16));
-    run_der.setFrames(IntRect(16*6, 0, 16, 16), IntRect(16*7, 0, 16, 16));
+    run_left.setFrames(IntRect(16*2, 0, 16, 16), IntRect(16*3, 0, 16, 16));
+    run_right.setFrames(IntRect(16*6, 0, 16, 16), IntRect(16*7, 0, 16, 16));
+
+    // PUSHING ANIMATIONS
+    push_left.setFrames(IntRect(16*2, 16, 16, 16), IntRect(16*3, 16, 16, 16));
+    push_left.loopXtimes(1);
+
 
 }
 
 void Player::changeAnimation(Animation* newAnimation)
 {
-    currentAnim = newAnimation;
-    currentAnim->setPosition(hitbox.getPosition());
+    if(newAnimation != currentAnim) {
+        newAnimation->reset();
+        currentAnim = newAnimation;
+        currentAnim->setPosition(hitbox.getPosition());
+    }
+    
 }
 
 
@@ -59,40 +69,44 @@ void Player::setMovement()
 
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) 
    {
-       if(!walking) 
+       if(!walking && !playingAnimation) 
        {
            nextspot = y - tilesize;
            move[UP] = true;
+           lastPosition = "UP";
            walking = true;
        }
    }
 
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) 
    {
-       if(!walking) 
+       if(!walking && !playingAnimation) 
        {
            nextspot = y + tilesize;
            move[DOWN] = true;
+           lastPosition = "DOWN";
            walking = true;
        }
    }
 
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) 
    {
-       if(!walking) 
+       if(!walking && !playingAnimation) 
        {
            nextspot = x - tilesize;
            move[LEFT] = true;
+           lastPosition = "LEFT";
            walking = true;
        }
    }
 
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) 
    {
-       if(!walking) 
+       if(!walking && !playingAnimation) 
        {
            nextspot = x + tilesize;
            move[RIGHT] = true;
+           lastPosition = "RIGHT";
            walking = true;
        }
    }
@@ -101,9 +115,8 @@ void Player::setMovement()
 
 void Player::moving(float elapsedTime) 
 {
-    if(walking) 
+    if(walking) // if the player is moving
     {
-
         currentAnim->play();
 
         if(move[UP]) 
@@ -134,7 +147,7 @@ void Player::moving(float elapsedTime)
         if(move[LEFT]) 
         {
             x -= movespeed;
-            changeAnimation(&run_izq);
+            changeAnimation(&run_left);
             if(x <= nextspot) {
                 x = nextspot;
                 walking = false;
@@ -145,7 +158,7 @@ void Player::moving(float elapsedTime)
         if(move[RIGHT]) 
         {
             x += movespeed;
-            changeAnimation(&run_der);
+            changeAnimation(&run_right);
             if(x >= nextspot) {
                 x = nextspot;
                 walking = false;
@@ -154,29 +167,53 @@ void Player::moving(float elapsedTime)
         }
 
     } 
-    else 
+    else // if the player isn't moving 
     {   
         currentAnim->stop();
+
     }
 }
-
-
 
 void Player::update(float elapsedTime)
 {
 
     setMovement();
     moving(elapsedTime);
+
+    
+    if(playingAnimation) 
+    {
+        currentAnim->play();
+        if(currentAnim->isFinished()) {
+            playingAnimation = false;
+        }
+    }
+
+
+    if(!walking) {
+        // PARA QUE SE CHOQUE CON LOS BLOQUES Y LOS EMPUJE
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)) {
+
+            if(lastPosition == "LEFT" && !playingAnimation) 
+            {
+                changeAnimation(&push_left);
+                playingAnimation = true;
+            } 
+            else if(lastPosition == "RIGHT" && !playingAnimation)
+            {
+                /*
+                changeAnimation(&push_right);
+                playingAnimation = true;
+                */
+               
+            }
+
+        }
+    }
+
     hitbox.setPosition(x, y);
     currentAnim->setPosition(sf::Vector2f(x, y));
     currentAnim->update();
-
-    /*
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::F)) {
-        std::cout << "POS ACTUAL: " << hitbox.getPosition().x << ", " << hitbox.getPosition().y << std::endl;
-    }
-    */
-    // Updating the animation
     
 }
 

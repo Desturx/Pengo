@@ -18,6 +18,8 @@ class Animation {
         bool loop = true;
         bool finished = false;
         bool isPlaying = true;
+        int loopNumbers = 0;
+        int times = 0;
 
     public:
         Animation(std::string textureName, int sprSize, float animationVelocity);
@@ -30,6 +32,11 @@ class Animation {
         void update();
         void play();
         void stop();
+
+        bool isFinished();
+
+        void loopXtimes(int timesToLoop);
+        void reset();
         
         void draw(sf::RenderWindow& window);
 };

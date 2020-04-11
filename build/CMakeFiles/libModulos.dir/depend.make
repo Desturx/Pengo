@@ -4,11 +4,18 @@
 CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o: ../sources/headers/Animation.h
 CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o: ../sources/src/Animation.cpp
 
+CMakeFiles/libModulos.dir/sources/src/Block.cpp.o: ../sources/headers/Block.h
+CMakeFiles/libModulos.dir/sources/src/Block.cpp.o: ../sources/src/Block.cpp
+
 CMakeFiles/libModulos.dir/sources/src/Game.cpp.o: ../sources/headers/Animation.h
+CMakeFiles/libModulos.dir/sources/src/Game.cpp.o: ../sources/headers/Block.h
 CMakeFiles/libModulos.dir/sources/src/Game.cpp.o: ../sources/headers/Game.h
+CMakeFiles/libModulos.dir/sources/src/Game.cpp.o: ../sources/headers/Map.h
 CMakeFiles/libModulos.dir/sources/src/Game.cpp.o: ../sources/headers/Player.h
+CMakeFiles/libModulos.dir/sources/src/Game.cpp.o: ../sources/headers/tinyxml2.h
 CMakeFiles/libModulos.dir/sources/src/Game.cpp.o: ../sources/src/Game.cpp
 
+CMakeFiles/libModulos.dir/sources/src/Map.cpp.o: ../sources/headers/Block.h
 CMakeFiles/libModulos.dir/sources/src/Map.cpp.o: ../sources/headers/Map.h
 CMakeFiles/libModulos.dir/sources/src/Map.cpp.o: ../sources/headers/tinyxml2.h
 CMakeFiles/libModulos.dir/sources/src/Map.cpp.o: ../sources/src/Map.cpp

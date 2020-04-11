@@ -12,6 +12,10 @@ SFML/Graphics.hpp
 iostream
 -
 
+../sources/headers/Block.h
+SFML/Graphics.hpp
+-
+
 ../sources/headers/Game.h
 SFML/Graphics.hpp
 -
@@ -19,6 +23,8 @@ iostream
 -
 Player.h
 ../sources/headers/Player.h
+Map.h
+../sources/headers/Map.h
 
 ../sources/headers/Map.h
 SFML/Graphics.hpp
@@ -27,6 +33,8 @@ iostream
 -
 tinyxml2.h
 ../sources/headers/tinyxml2.h
+Block.h
+../sources/headers/Block.h
 
 ../sources/headers/Player.h
 SFML/Graphics.hpp
@@ -69,6 +77,10 @@ assert.h
 /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp
 Animation.h
 /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.h
+
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp
+Block.h
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.h
 
 /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp
 Game.h
