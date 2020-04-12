@@ -2,12 +2,17 @@
 
 Map::Map()
 {
+
+}
+
+void Map::loadLevel() 
+{
     readMap();
     setData();
     loadTextures();
     createSprites();
-
 }
+
 
 Map::~Map()
 {
@@ -180,8 +185,76 @@ void Map::createSprites()
 }
 
 
-void Map::update() 
+sf::Vector2f Map::getViewPosition()
 {
+    tinyxml2::XMLElement* object;
+
+    object = xmlMap->FirstChildElement("objectgroup");
+    std::string viewLayer; 
+    int x = 0; int y = 0;
+
+    while(object) {
+        viewLayer = (std::string)object->Attribute("name");
+        
+        if(viewLayer.compare("view") == 0) {
+            object = object->FirstChildElement("object");
+
+            object->QueryIntAttribute("x", &x);
+            object->QueryIntAttribute("y", &y);
+
+            break;
+
+        } else {
+            object = object->NextSiblingElement("objectgroup");
+        }
+    }
+
+    return sf::Vector2f(x, y);
+}
+
+sf::Vector2f Map::getPlayerPosition()
+{
+     tinyxml2::XMLElement* object;
+
+    object = xmlMap->FirstChildElement("objectgroup");
+    std::string playerPos; 
+    int x = 0; int y = 0;
+
+    while(object) {
+        playerPos = (std::string)object->Attribute("name");
+        
+        if(playerPos.compare("playerPosition") == 0) {
+            object = object->FirstChildElement("object");
+
+            object->QueryIntAttribute("x", &x);
+            object->QueryIntAttribute("y", &y);
+
+            break;
+
+        } else {
+            object = object->NextSiblingElement("objectgroup");
+        }
+    }
+
+    return sf::Vector2f(x, y);
+}
+
+
+void Map::update(Player *player) 
+{
+    // update for the blocks
+
+    for(unsigned i = 0; i < dest_blocks.size(); i++) {
+
+        float distanceX = player->getPosition().x - dest_blocks.at(i)->getPosition().x;
+        float distanceY = player->getPosition().y - dest_blocks.at(i)->getPosition().y;
+        float final = sqrt(pow(distanceX, 2)+pow(distanceY, 2));
+
+        if(final <= 16.f) {
+            dest_blocks.at(i)->update(player);
+        }
+
+    }
 
 }
 

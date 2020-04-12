@@ -4,7 +4,10 @@ Game::Game()
 {
     window.create(sf::VideoMode(800, 720), "Pengo");
     window.setVerticalSyncEnabled(true);
-    //window.setFramerateLimit(30);
+    // window.setFramerateLimit(30);
+    // view.zoom(0.23f);
+    view.zoom(0.26f);
+
 }
 
 
@@ -34,11 +37,16 @@ void Game::start()
 void Game::declarations()
 {
     timesUpdate = updatesPS.getElapsedTime();
-
-
-    player = new Player(8,8);
+    
+    // first the map
     actualMap = new Map();
+    actualMap->loadLevel();
 
+
+    player = new Player(actualMap->getPlayerPosition().x, actualMap->getPlayerPosition().y);
+
+    // std::cout << actualMap->getViewPosition().x << ", " << actualMap->getViewPosition().y << std::endl;
+    view.setCenter(actualMap->getViewPosition().x + 6, actualMap->getViewPosition().y - 14);
 
 }
 
@@ -60,12 +68,14 @@ void Game::events()
 
 void Game::updateGame(float elapsedTime)
 {
+    actualMap->update(player);
     player->update(elapsedTime);
 }
 
 void Game::render()
 {
     window.clear();
+    window.setView(view);
 
     player->draw(window);
     actualMap->draw(window);

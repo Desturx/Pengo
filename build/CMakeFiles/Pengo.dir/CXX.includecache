@@ -15,6 +15,8 @@ iostream
 ../sources/headers/Block.h
 SFML/Graphics.hpp
 -
+Player.h
+../sources/headers/Player.h
 
 ../sources/headers/Game.h
 SFML/Graphics.hpp

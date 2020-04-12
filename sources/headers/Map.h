@@ -4,6 +4,7 @@
 #include "tinyxml2.h"
 #include "Block.h"
 
+class Player;
 
 class Map {
     private:
@@ -34,6 +35,8 @@ class Map {
     public:
         Map();
         virtual ~Map();
+        void loadLevel();
+
         void readMap();
         void setData();
         void loadTextures();
@@ -43,7 +46,10 @@ class Map {
 
         void printData();
 
-        void update();
+        sf::Vector2f getViewPosition();
+        sf::Vector2f getPlayerPosition();
+
+        void update(Player *player);
         void draw(sf::RenderWindow& window);
 
 

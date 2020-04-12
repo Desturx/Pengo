@@ -6,14 +6,10 @@ Player::Player(int posx, int posy)
 
     hitbox = sf::RectangleShape(sf::Vector2f(16.f, 16.f));
     hitbox.setFillColor(sf::Color::Red);
-    x = 0;
-    y = 0;
+    x = posx;
+    y = posy;
 
-    //hitbox.setOrigin(16/2, 16/2);
     hitbox.setPosition(x, y);
-
-    //movespeed = 16.0/ tilesize; // se mueve una sola vez por bloque, si fuera 32 se movería 2 bloques;
-    
     movespeed = 1.5f;
 
 
@@ -22,12 +18,22 @@ Player::Player(int posx, int posy)
     
     walking = false;
 
-    // hitbox.setPosition(position);
-
     // SETTING THE ACTUAL ANIMATION
-        loadAnimations();
-        currentAnim = &run_right;
-        currentAnim->setPosition(sf::Vector2f(8, 8));
+    loadAnimations();
+
+    for(unsigned col = 0; col < 4; col++) {
+        colisions[col] = sf::RectangleShape(sf::Vector2f(16,16));
+        colisions[col].setFillColor(sf::Color::Green);
+    }
+
+    colisions[UP].setPosition(x, y - 16);
+    colisions[DOWN].setPosition(x, y + 16);
+    colisions[RIGHT].setPosition(x + 16, y);
+    colisions[LEFT].setPosition(x - 16, y);
+    
+
+    currentAnim = &run_down;
+    currentAnim->setPosition(sf::Vector2f(8, 8));
 }
 
 void Player::loadAnimations()
@@ -36,13 +42,24 @@ void Player::loadAnimations()
 
     // RUNNING ANIMATIONS
     run_up.setFrames(IntRect(16*4, 0, 16, 16), IntRect(16*5, 0, 16, 16));
-    run_down.setFrames(IntRect(0,0, 16, 16), IntRect(16, 0, 16, 16));
+    run_down.setFrames(IntRect(16*0,0, 16, 16), IntRect(16*1, 0, 16, 16));
     run_left.setFrames(IntRect(16*2, 0, 16, 16), IntRect(16*3, 0, 16, 16));
     run_right.setFrames(IntRect(16*6, 0, 16, 16), IntRect(16*7, 0, 16, 16));
 
     // PUSHING ANIMATIONS
     push_left.setFrames(IntRect(16*2, 16, 16, 16), IntRect(16*3, 16, 16, 16));
     push_left.loopXtimes(1);
+
+    push_right.setFrames(IntRect(16*6, 16, 16, 16), IntRect(16*7, 16, 16, 16));
+    push_right.loopXtimes(1);
+
+    push_up.setFrames(IntRect(16*4, 16, 16, 16), IntRect(16*5, 16, 16, 16));
+    push_up.loopXtimes(1);
+
+    push_down.setFrames(IntRect(16*0, 16, 16, 16), IntRect(16*1, 16, 16, 16));
+    push_down.loopXtimes(1);
+
+
 
 
 }
@@ -191,34 +208,100 @@ void Player::update(float elapsedTime)
 
 
     if(!walking) {
-        // PARA QUE SE CHOQUE CON LOS BLOQUES Y LOS EMPUJE
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)) {
-
-            if(lastPosition == "LEFT" && !playingAnimation) 
-            {
-                changeAnimation(&push_left);
-                playingAnimation = true;
-            } 
-            else if(lastPosition == "RIGHT" && !playingAnimation)
-            {
-                /*
-                changeAnimation(&push_right);
-                playingAnimation = true;
-                */
-               
-            }
-
-        }
-    }
+        pushingBlocks();
+    }   
 
     hitbox.setPosition(x, y);
     currentAnim->setPosition(sf::Vector2f(x, y));
     currentAnim->update();
+    moveColisions();
+
+    // checkColisions(blocks);
+
     
+}
+
+void Player::moveColisions()
+{
+    colisions[UP].setPosition(x, y - 16);
+    colisions[DOWN].setPosition(x, y + 16);
+    colisions[RIGHT].setPosition(x + 16, y);
+    colisions[LEFT].setPosition(x - 16, y);
+}
+
+sf::Vector2f Player::getPosition()
+{
+    return hitbox.getPosition();
+}
+
+sf::RectangleShape Player::topColision()
+{  
+    return colisions[UP];
+}
+
+sf::RectangleShape Player::bottomColision()
+{  
+    return colisions[DOWN];
+}
+
+sf::RectangleShape Player::leftColision()
+{  
+    return colisions[LEFT];
+}
+
+
+
+/*
+void Player::checkColisions(std::vector<Block*> blocks)
+{
+    
+    for(int i = 0; i < 4; i++){
+        for(unsigned j = 0; j < blocks.size(); j++) {
+            if(colisions[i].getGlobalBounds().intersects(blocks.at(j)->getGlobalBounds()))
+            {
+                std::cout << "ESTÁ'COLISIONANDO EN ALGÚN LAO" << std::endl;
+            }
+
+        }
+    } 
+}
+*/
+
+void Player::pushingBlocks()
+{
+    // PARA QUE SE CHOQUE CON LOS BLOQUES Y LOS EMPUJE
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)) {
+
+        if(lastPosition == "LEFT" && !playingAnimation) 
+        {
+            changeAnimation(&push_left);
+            playingAnimation = true;
+        } 
+        else if(lastPosition == "RIGHT" && !playingAnimation)
+        {
+            
+            changeAnimation(&push_right);
+            playingAnimation = true;
+        }
+        else if(lastPosition == "UP" && !playingAnimation)
+        {
+            changeAnimation(&push_up);
+            playingAnimation = true;
+        }
+        else if(lastPosition == "DOWN" && !playingAnimation)
+        {
+            changeAnimation(&push_down);
+            playingAnimation = true;            
+        }
+    }
 }
 
 void Player::draw(sf::RenderWindow& window)
 {
-    window.draw(hitbox);
+    //window.draw(hitbox);
     currentAnim->draw(window);
+    for(int i = 0; i < 4; i++) {
+        window.draw(colisions[i]);
+    }
+
 }

@@ -4,6 +4,8 @@
 
 #include "Animation.h"
 
+
+
 class Player {
     private:
         sf::RectangleShape hitbox;
@@ -24,10 +26,13 @@ class Player {
 
         bool playingAnimation = false;
 
+        // colision boxes
+        //enum COLISIONS {UP,DOWN,LEFT,RIGHT};
+        sf::RectangleShape colisions[4];
+
+
 
         // Animations
-        // Animation run = Animation("./resources/", size, velocity);
-
         Animation* currentAnim;
         std::string textureSrc = "./resources/pengo.png";
         
@@ -53,6 +58,15 @@ class Player {
         void loadAnimations();
         void changeAnimation(Animation* newAnimation);
         void moving(float elapsedTime);
+        void pushingBlocks();
+        // void checkColisions(std::vector<Block*> blocks);
+        sf::RectangleShape topColision();
+        sf::RectangleShape bottomColision();
+        sf::RectangleShape leftColision();
+        sf::RectangleShape rightColision();
+
+        sf::Vector2f getPosition();
+        void moveColisions();
 
         void update(float elapsedTime);
         void draw(sf::RenderWindow& window);
