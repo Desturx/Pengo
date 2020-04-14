@@ -28,8 +28,8 @@ class Map {
         sf::Sprite* tilesetSprite;
         sf::Sprite**** mapSprite;
 
-
         std::vector<Block*> dest_blocks;
+        int** colisions;
         
 
     public:
@@ -45,6 +45,7 @@ class Map {
         void creaColisiones();
 
         void printData();
+        void updateColisions(Block *block);
 
         sf::Vector2f getViewPosition();
         sf::Vector2f getPlayerPosition();

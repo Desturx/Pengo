@@ -14,6 +14,21 @@ void Map::loadLevel()
 }
 
 
+void Map::printData()
+{
+    using namespace std;
+
+    cout << endl << "Mapa de colisiones:" << endl;
+    cout <<  "------------------------" << endl;
+    for(int y = 0; y < height; y++){
+        for(int x = 0; x < width; x++){
+            cout << colisions[y][x] << "-";
+        }
+       cout << endl;
+    }
+    cout <<  "------------------------" << endl;
+}
+
 Map::~Map()
 {
     for(int i = 0; i < numlayers; i++) {
@@ -36,13 +51,11 @@ Map::~Map()
     delete mapSprite;
 }
 
-
 void Map::readMap()
 {
     docum.LoadFile("./resources/maps/mapa1.tmx");
     xmlMap = docum.FirstChildElement("map");
 }
-
 
 void Map::setData()
 {
@@ -64,7 +77,6 @@ void Map::getLayers()
         layer = layer->NextSiblingElement("layer");
     }
 }
-
 
 void Map::loadTextures()
 {
@@ -120,7 +132,6 @@ void Map::loadTextures()
 
 }
 
-
 void Map::createSprites()
 {
     mapSprite = new sf::Sprite***[numlayers];
@@ -134,6 +145,13 @@ void Map::createSprites()
             }
         }
     }
+
+
+    colisions = new int*[height];
+    for(int i = 0; i < height; i++) {
+        colisions[i] = new int[width]; 
+    }
+
 
     int cols = tileSetTexture.getSize().x / tilewidth;
     int rows = tileSetTexture.getSize().y / tileHeight;
@@ -155,17 +173,28 @@ void Map::createSprites()
             for(int k = 0; k < width; k++) {
                 // TO-DO check this line
                 gid = tileMap[i][j][k]-1;
-
+                colisions[j][k] = 0;
                 if(gid > 0 && gid < width*height) 
                 {
+
+                    
                     if(gid == 1) 
                     {
                         // COLOCAR LOS SPRITES DE LOS BLOQUES AZULES Y MANDARLOS
                         Block* newBlock = new Block(tileSetTexture, tilesetSprite[gid].getTextureRect(), sf::Vector2f(k*tilewidth, j*tileHeight) );
                         dest_blocks.push_back(newBlock);
-                    } 
-                    else 
+                        colisions[j][k] = 1;
+
+                    }
+                    else if(gid == 3)
                     {
+                        colisions[j][k] = 2;
+                        mapSprite[i][j][k] = new sf::Sprite(tileSetTexture, tilesetSprite[gid].getTextureRect());
+                        mapSprite[i][j][k]->setPosition(k*tilewidth, j*tileHeight);
+                    } 
+                    else
+                    {
+                        colisions[j][k] = 3;
                         mapSprite[i][j][k] = new sf::Sprite(tileSetTexture, tilesetSprite[gid].getTextureRect());
                         mapSprite[i][j][k]->setPosition(k*tilewidth, j*tileHeight);
                     }
@@ -181,7 +210,6 @@ void Map::createSprites()
         }
     }
 }
-
 
 sf::Vector2f Map::getViewPosition()
 {
@@ -237,7 +265,6 @@ sf::Vector2f Map::getPlayerPosition()
     return sf::Vector2f(x, y);
 }
 
-
 void Map::update(Player *player) 
 {
     // update for the blocks
@@ -248,12 +275,55 @@ void Map::update(Player *player)
         float distanceY = player->getPosition().y - dest_blocks.at(i)->getPosition().y;
         float final = sqrt(pow(distanceX, 2)+pow(distanceY, 2));
 
-        if(final <= 16.f) {
+        if(final <= 16.f && !dest_blocks.at(i)->getMoving()) { // si el bloque no se mueve
+            
             dest_blocks.at(i)->update(player);
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::F)) 
+            {
+                updateColisions(dest_blocks.at(i));
+            }
         }
-
+        else if(dest_blocks.at(i)->getMoving()) // si el bloque se está moviendo
+        {
+            dest_blocks.at(i)->update2();
+        }
     }
 
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+        printData();
+    }
+
+}
+
+
+void Map::updateColisions(Block* block)
+{
+    using namespace std;
+                cout << "Fila: " << block->getPosition().y/16 << endl;
+                cout << "Columna: " << block->getPosition().y/16 << endl;
+                int row = block->getPosition().y/16;
+                int col = block->getPosition().x/16;
+                int rowFinal = row;
+                int colFinal = col;
+
+                colisions[row][col] = 0;
+
+                while(colisions[rowFinal][colFinal] == 0) 
+                {
+                    rowFinal--;
+                    // dependiendo de hacia que posición se tenga que dirigir
+                } 
+
+                // dependiendo de hacia que posición vaya sumo o resto
+                rowFinal++;
+                
+                /*
+                int movFinalY = rowFinal - row;
+                int movFinalX = colFinal - col;
+                */
+                block->setNextSpot(rowFinal*16);
+                colisions[rowFinal][colFinal] = 1;
+                //block->setPosition(sf::Vector2f(colFinal*16, rowFinal*16));
 }
 
 void Map::draw(sf::RenderWindow& window)

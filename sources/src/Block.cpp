@@ -9,6 +9,9 @@ Block::Block(sf::Texture &txt,sf::IntRect tamSprite, sf::Vector2f position)
     hitbox.setPosition(position);
     sprite = sf::Sprite(txt, tamSprite);
     sprite.setPosition(position);
+
+    x = position.x;
+    y = position.y;
 }
 
 Block::~Block()
@@ -43,7 +46,37 @@ void Block::update(Player *player)
         player->hasColided = true;
     }
 
+}
 
+void Block::update2()
+{
+    //std::cout << "llamandose"<< std::endl;
+    if(isMoving) 
+    {
+        if(dir.compare("UP") == 0) 
+        {
+            y-=moveSpeed;
+            if( y <= nextSpot) {
+                y = nextSpot;
+                isMoving = false;
+            }
+        }
+        else if(dir.compare("DOWN") == 0)
+        {
+            
+        }
+
+    }
+    hitbox.setPosition(x, y);
+    sprite.setPosition(x, y);
+}
+
+void Block::setNextSpot(int next)
+{
+    isMoving = true;
+    nextSpot = next;
+    std::cout << "NEXSPOT: " << nextSpot << std::endl;
+    std::cout << "ACTUAL SPOT: " << y << std::endl;
 }
 
 sf::FloatRect Block::getGlobalBounds()
@@ -55,6 +88,10 @@ sf::Vector2f Block::getPosition()
 {
     return hitbox.getPosition();
 }
+
+
+
+
 /*
 Just to use it as a gizmo to see if the block was drawn
 */

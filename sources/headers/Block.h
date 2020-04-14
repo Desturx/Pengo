@@ -8,12 +8,20 @@ class Block {
         Block(sf::Texture &texture,sf::IntRect tamSprite, sf::Vector2f position);
         virtual ~Block();
         void update(Player *player);
+        void update2();
         void draw(sf::RenderWindow &window);
         void drawGizmo(sf::RenderWindow &window);
         sf::FloatRect getGlobalBounds();
         sf::Vector2f getPosition();
+        void setNextSpot(int nextSpot);
+        bool getMoving(){return isMoving;}
 
     private:
         sf::RectangleShape hitbox;
         sf::Sprite sprite;
+        bool isMoving  = false;
+        int x, y, nextSpot;
+        float moveSpeed = 4.f;
+        std::string dir;
+
 };
