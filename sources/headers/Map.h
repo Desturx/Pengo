@@ -45,7 +45,7 @@ class Map {
         void creaColisiones();
 
         void printData();
-        void updateColisions(Block *block);
+        void updateColisions(Block *block, std::string direction);
 
         sf::Vector2f getViewPosition();
         sf::Vector2f getPlayerPosition();

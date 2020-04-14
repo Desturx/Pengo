@@ -87,7 +87,9 @@ void Player::setMovement()
 
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) 
    {
-        if(!walking) {
+        lastPosition = "UP";
+
+        if(!walking && !playingAnimation) {
             changeAnimation(&run_up);
         }
 
@@ -95,14 +97,15 @@ void Player::setMovement()
         {
             nextspot = y - tilesize;
             move[UP] = true;
-            lastPosition = "UP";
             walking = true;
         }
    }
 
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) 
    {    
-        if(!walking) {
+        lastPosition = "DOWN";
+
+        if(!walking && !playingAnimation) {
             changeAnimation(&run_down);
         }
 
@@ -110,14 +113,15 @@ void Player::setMovement()
         {
             nextspot = y + tilesize;
             move[DOWN] = true;
-            lastPosition = "DOWN";
             walking = true;
         }
    }
 
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) 
    {
-        if(!walking) {
+        lastPosition = "LEFT";
+
+        if(!walking && !playingAnimation) {
             changeAnimation(&run_left);
         }
 
@@ -125,14 +129,15 @@ void Player::setMovement()
         {
             nextspot = x - tilesize;
             move[LEFT] = true;
-            lastPosition = "LEFT";
             walking = true;
         }
    }
 
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) 
    {
-        if(!walking) {
+        lastPosition = "RIGHT";
+
+        if(!walking && !playingAnimation) {
             changeAnimation(&run_right);
         }
 
@@ -140,7 +145,6 @@ void Player::setMovement()
         {
             nextspot = x + tilesize;
             move[RIGHT] = true;
-            lastPosition = "RIGHT";
             walking = true;
         }
    }
@@ -225,7 +229,7 @@ void Player::update(float elapsedTime)
 
 
     if(!walking) {
-        pushingBlocks();
+        // pushingBlocks();
     } else {
         if(hasColided) {
             for(int i = 0; i < 4; i++) {
@@ -302,32 +306,30 @@ void Player::setColision(std::string dir, bool value)
 
 }
 
-void Player::pushingBlocks()
+void Player::pushingBlocks(std::string direction)
 {
     // PARA QUE SE CHOQUE CON LOS BLOQUES Y LOS EMPUJE
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)) {
 
-        if(lastPosition == "LEFT" && !playingAnimation) 
-        {
-            changeAnimation(&push_left);
-            playingAnimation = true;
-        } 
-        else if(lastPosition == "RIGHT" && !playingAnimation)
-        {
-            
-            changeAnimation(&push_right);
-            playingAnimation = true;
-        }
-        else if(lastPosition == "UP" && !playingAnimation)
-        {
-            changeAnimation(&push_up);
-            playingAnimation = true;
-        }
-        else if(lastPosition == "DOWN" && !playingAnimation)
-        {
-            changeAnimation(&push_down);
-            playingAnimation = true;            
-        }
+    if(direction == "LEFT" && !playingAnimation) 
+    {
+        changeAnimation(&push_left);
+        playingAnimation = true;
+    } 
+    else if(direction == "RIGHT" && !playingAnimation)
+    {
+        
+        changeAnimation(&push_right);
+        playingAnimation = true;
+    }
+    else if(direction == "UP" && !playingAnimation)
+    {
+        changeAnimation(&push_up);
+        playingAnimation = true;
+    }
+    else if(direction == "DOWN" && !playingAnimation)
+    {
+        changeAnimation(&push_down);
+        playingAnimation = true;            
     }
 }
 

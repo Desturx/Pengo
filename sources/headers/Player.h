@@ -19,7 +19,7 @@ class Player {
         enum MOVE {UP,DOWN,LEFT,RIGHT};
         bool move[4];
 
-        std::string lastPosition = "RIGHT";
+        std::string lastPosition = "DOWN";
 
         bool walking;
         int nextspot;
@@ -53,7 +53,7 @@ class Player {
         void loadAnimations();
         void changeAnimation(Animation* newAnimation);
         void moving(float elapsedTime);
-        void pushingBlocks();
+        void pushingBlocks(std::string direction);
         // void checkColisions(std::vector<Block*> blocks);
         sf::RectangleShape topColision();
         sf::RectangleShape bottomColision();
@@ -64,6 +64,8 @@ class Player {
 
         sf::Vector2f getPosition();
         void moveColisions();
+
+        std::string getDirection(){return lastPosition;}
 
         void update(float elapsedTime);
         void draw(sf::RenderWindow& window);

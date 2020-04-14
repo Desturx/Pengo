@@ -278,14 +278,14 @@ void Map::update(Player *player)
         if(final <= 16.f && !dest_blocks.at(i)->getMoving()) { // si el bloque no se mueve
             
             dest_blocks.at(i)->update(player);
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::F)) 
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) 
             {
-                updateColisions(dest_blocks.at(i));
+                updateColisions(dest_blocks.at(i), player->getDirection());
             }
         }
         else if(dest_blocks.at(i)->getMoving()) // si el bloque se está moviendo
         {
-            dest_blocks.at(i)->update2();
+            dest_blocks.at(i)->update2(player);
         }
     }
 
@@ -296,34 +296,57 @@ void Map::update(Player *player)
 }
 
 
-void Map::updateColisions(Block* block)
+void Map::updateColisions(Block* block, std::string direction)
 {
     using namespace std;
-                cout << "Fila: " << block->getPosition().y/16 << endl;
-                cout << "Columna: " << block->getPosition().y/16 << endl;
-                int row = block->getPosition().y/16;
-                int col = block->getPosition().x/16;
-                int rowFinal = row;
-                int colFinal = col;
 
-                colisions[row][col] = 0;
+    int row = block->getPosition().y/16;
+    int col = block->getPosition().x/16;
+    int rowFinal = row;
+    int colFinal = col;
+    colisions[rowFinal][colFinal] = 0;
 
-                while(colisions[rowFinal][colFinal] == 0) 
-                {
-                    rowFinal--;
-                    // dependiendo de hacia que posición se tenga que dirigir
-                } 
+    if(direction.compare("UP") == 0) {
+        while(colisions[rowFinal][colFinal] == 0) 
+        {
+            rowFinal--;
+            // dependiendo de hacia que posición se tenga que dirigir
+        } 
+        // dependiendo de hacia que posición vaya sumo o resto
+        rowFinal++;
+        block->setNextSpot(rowFinal*16, direction);
+    }
+    else if(direction.compare("DOWN") == 0) 
+    {
+        while(colisions[rowFinal][colFinal] == 0) 
+        {
+            rowFinal++;
+        } 
+        rowFinal--;
+        block->setNextSpot(rowFinal*16, direction);
+    }
+    else if(direction.compare("LEFT") == 0)
+    {
+        while(colisions[rowFinal][colFinal] == 0) 
+        {
+            colFinal--;
+        } 
+        colFinal++;
+        block->setNextSpot(colFinal*16, direction);
 
-                // dependiendo de hacia que posición vaya sumo o resto
-                rowFinal++;
-                
-                /*
-                int movFinalY = rowFinal - row;
-                int movFinalX = colFinal - col;
-                */
-                block->setNextSpot(rowFinal*16);
-                colisions[rowFinal][colFinal] = 1;
-                //block->setPosition(sf::Vector2f(colFinal*16, rowFinal*16));
+    }
+    else if(direction.compare("RIGHT") == 0)
+    {
+        while(colisions[rowFinal][colFinal] == 0) 
+        {
+            colFinal++;
+        } 
+        colFinal--;
+        block->setNextSpot(colFinal*16, direction);
+    }
+
+    colisions[rowFinal][colFinal] = 1;
+    //block->setPosition(sf::Vector2f(colFinal*16, rowFinal*16));
 }
 
 void Map::draw(sf::RenderWindow& window)
