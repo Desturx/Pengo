@@ -13,8 +13,10 @@ Player::Player(int posx, int posy)
     movespeed = 1.5f;
 
 
-    for(int i = 0; i < 4; i++)
+    for(int i = 0; i < 4; i++) {
         move[i] = false;
+        canMove[i] = true;
+    }
     
     walking = false;
 
@@ -74,7 +76,6 @@ void Player::changeAnimation(Animation* newAnimation)
     
 }
 
-
 Player::~Player()
 {
     // Destructor
@@ -86,46 +87,62 @@ void Player::setMovement()
 
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) 
    {
-       if(!walking && !playingAnimation) 
-       {
-           nextspot = y - tilesize;
-           move[UP] = true;
-           lastPosition = "UP";
-           walking = true;
-       }
+        if(!walking) {
+            changeAnimation(&run_up);
+        }
+
+        if(!walking && !playingAnimation && canMove[UP]) 
+        {
+            nextspot = y - tilesize;
+            move[UP] = true;
+            lastPosition = "UP";
+            walking = true;
+        }
    }
 
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) 
-   {
-       if(!walking && !playingAnimation) 
-       {
-           nextspot = y + tilesize;
-           move[DOWN] = true;
-           lastPosition = "DOWN";
-           walking = true;
-       }
+   {    
+        if(!walking) {
+            changeAnimation(&run_down);
+        }
+
+        if(!walking && !playingAnimation  && canMove[DOWN]) 
+        {
+            nextspot = y + tilesize;
+            move[DOWN] = true;
+            lastPosition = "DOWN";
+            walking = true;
+        }
    }
 
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) 
    {
-       if(!walking && !playingAnimation) 
-       {
-           nextspot = x - tilesize;
-           move[LEFT] = true;
-           lastPosition = "LEFT";
-           walking = true;
-       }
+        if(!walking) {
+            changeAnimation(&run_left);
+        }
+
+        if(!walking && !playingAnimation && canMove[LEFT]) 
+        {
+            nextspot = x - tilesize;
+            move[LEFT] = true;
+            lastPosition = "LEFT";
+            walking = true;
+        }
    }
 
    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) 
    {
-       if(!walking && !playingAnimation) 
-       {
-           nextspot = x + tilesize;
-           move[RIGHT] = true;
-           lastPosition = "RIGHT";
-           walking = true;
-       }
+        if(!walking) {
+            changeAnimation(&run_right);
+        }
+
+        if(!walking && !playingAnimation && canMove[RIGHT]) 
+        {
+            nextspot = x + tilesize;
+            move[RIGHT] = true;
+            lastPosition = "RIGHT";
+            walking = true;
+        }
    }
 
 }
@@ -136,10 +153,10 @@ void Player::moving(float elapsedTime)
     {
         currentAnim->play();
 
-        if(move[UP]) 
+        if(move[UP] && canMove[UP]) 
         {
             y -= movespeed;
-            changeAnimation(&run_up);
+            //changeAnimation(&run_up);
 
             if(y <= nextspot) {
                 y = nextspot;
@@ -148,10 +165,10 @@ void Player::moving(float elapsedTime)
             }
         }
 
-        if(move[DOWN]) 
+        if(move[DOWN] && canMove[DOWN]) 
         {
             y += movespeed;
-            changeAnimation(&run_down);
+            //changeAnimation(&run_down);
 
             if(y >= nextspot) {
                 y = nextspot;
@@ -161,10 +178,10 @@ void Player::moving(float elapsedTime)
         }
 
 
-        if(move[LEFT]) 
+        if(move[LEFT] && canMove[LEFT]) 
         {
             x -= movespeed;
-            changeAnimation(&run_left);
+            //changeAnimation(&run_left);
             if(x <= nextspot) {
                 x = nextspot;
                 walking = false;
@@ -172,10 +189,10 @@ void Player::moving(float elapsedTime)
             }
         }
 
-        if(move[RIGHT]) 
+        if(move[RIGHT] && canMove[RIGHT]) 
         {
             x += movespeed;
-            changeAnimation(&run_right);
+            //changeAnimation(&run_right);
             if(x >= nextspot) {
                 x = nextspot;
                 walking = false;
@@ -209,15 +226,22 @@ void Player::update(float elapsedTime)
 
     if(!walking) {
         pushingBlocks();
-    }   
+    } else {
+        if(hasColided) {
+            for(int i = 0; i < 4; i++) {
+                canMove[i] = true;
+            }
+            hasColided = false;
+        }
+
+    }
 
     hitbox.setPosition(x, y);
     currentAnim->setPosition(sf::Vector2f(x, y));
     currentAnim->update();
     moveColisions();
 
-    // checkColisions(blocks);
-
+    //std::cout << "se puede mover?:" << canMove[UP] << std::endl;
     
 }
 
@@ -249,23 +273,34 @@ sf::RectangleShape Player::leftColision()
     return colisions[LEFT];
 }
 
-
+sf::RectangleShape Player::rightColision()
+{  
+    return colisions[RIGHT];
+}
 
 /*
-void Player::checkColisions(std::vector<Block*> blocks)
-{
-    
-    for(int i = 0; i < 4; i++){
-        for(unsigned j = 0; j < blocks.size(); j++) {
-            if(colisions[i].getGlobalBounds().intersects(blocks.at(j)->getGlobalBounds()))
-            {
-                std::cout << "ESTÁ'COLISIONANDO EN ALGÚN LAO" << std::endl;
-            }
-
-        }
-    } 
-}
+Sets the value of the desired colision (UP, DOWN, LEFT, RIGHT)
 */
+void Player::setColision(std::string dir, bool value)
+{
+    if(dir.compare("UP") == 0) 
+    {
+        canMove[UP] = value;
+    }
+    else if(dir.compare("DOWN") == 0)
+    {
+        canMove[DOWN] = value;
+    }
+    else if(dir.compare("LEFT") == 0)
+    {
+        canMove[LEFT] = value;
+    }
+    else if(dir.compare("RIGHT") == 0)
+    {
+        canMove[RIGHT] = value;
+    }
+
+}
 
 void Player::pushingBlocks()
 {
@@ -298,7 +333,7 @@ void Player::pushingBlocks()
 
 void Player::draw(sf::RenderWindow& window)
 {
-    //window.draw(hitbox);
+    window.draw(hitbox);
     currentAnim->draw(window);
     for(int i = 0; i < 4; i++) {
         window.draw(colisions[i]);

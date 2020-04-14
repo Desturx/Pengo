@@ -34,8 +34,6 @@ Map::~Map()
         delete mapSprite[i];
     }
     delete mapSprite;
-
-
 }
 
 

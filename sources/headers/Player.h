@@ -27,8 +27,8 @@ class Player {
         bool playingAnimation = false;
 
         // colision boxes
-        //enum COLISIONS {UP,DOWN,LEFT,RIGHT};
         sf::RectangleShape colisions[4];
+        bool canMove[4];
 
 
 
@@ -46,11 +46,6 @@ class Player {
         Animation push_up = Animation(textureSrc, 16, 0.15f);
         Animation push_down = Animation(textureSrc, 16, 0.15f);
 
-
-        
-        
-
-
     public:
         Player(int posx, int posy);
         virtual ~Player();
@@ -65,9 +60,13 @@ class Player {
         sf::RectangleShape leftColision();
         sf::RectangleShape rightColision();
 
+        void setColision(std::string dir, bool value);
+
         sf::Vector2f getPosition();
         void moveColisions();
 
         void update(float elapsedTime);
         void draw(sf::RenderWindow& window);
+        bool hasColided = false;
+        
 };

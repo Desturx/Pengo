@@ -18,14 +18,31 @@ Block::~Block()
 
 void Block::update(Player *player)
 {
-    // hacer un check para que solo haga las comprobaciones si la distancia del jugador al bloque es 16 pixels
-    std::cout << "Entró" << std::endl;
-    if(hitbox.getGlobalBounds().intersects(player->topColision().getGlobalBounds())) {
-        // std::cout << "SE COLISIONAROOOON" << std::endl;
-        //player->test();
 
+    if(hitbox.getGlobalBounds().intersects(player->topColision().getGlobalBounds())) 
+    {
+        player->setColision("UP", false);
+        player->hasColided = true;
     }
     
+    if(hitbox.getGlobalBounds().intersects(player->bottomColision().getGlobalBounds())) 
+    {
+        player->setColision("DOWN", false);
+        player->hasColided = true;
+    } 
+    
+    if(hitbox.getGlobalBounds().intersects(player->leftColision().getGlobalBounds())) 
+    {
+        player->setColision("LEFT", false);
+        player->hasColided = true;
+    }
+    
+    if(hitbox.getGlobalBounds().intersects(player->rightColision().getGlobalBounds())) 
+    {
+        player->setColision("RIGHT", false);
+        player->hasColided = true;
+    }
+
 
 }
 
