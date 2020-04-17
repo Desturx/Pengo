@@ -46,6 +46,7 @@ class Player {
         Animation push_up = Animation(textureSrc, 16, 0.15f);
         Animation push_down = Animation(textureSrc, 16, 0.15f);
 
+
     public:
         Player(int posx, int posy);
         virtual ~Player();
@@ -66,6 +67,7 @@ class Player {
         void moveColisions();
 
         std::string getDirection(){return lastPosition;}
+        bool isMoving(){return walking;};
 
         void update(float elapsedTime);
         void draw(sf::RenderWindow& window);

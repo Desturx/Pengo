@@ -1,37 +1,37 @@
 [
 {
   "directory": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build",
-  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/Pengo.dir/main.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/main.cpp\"",
+  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -O3 -DNDEBUG   -o CMakeFiles/Pengo.dir/main.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/main.cpp\"",
   "file": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/main.cpp"
 },
 {
   "directory": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build",
-  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/sources/src/Game.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp\"",
+  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -O3 -DNDEBUG   -o CMakeFiles/libModulos.dir/sources/src/Game.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp\"",
   "file": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp"
 },
 {
   "directory": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build",
-  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/sources/src/Map.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp\"",
+  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -O3 -DNDEBUG   -o CMakeFiles/libModulos.dir/sources/src/Map.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp\"",
   "file": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp"
 },
 {
   "directory": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build",
-  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/sources/src/Player.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp\"",
+  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -O3 -DNDEBUG   -o CMakeFiles/libModulos.dir/sources/src/Player.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp\"",
   "file": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp"
 },
 {
   "directory": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build",
-  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp\"",
+  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -O3 -DNDEBUG   -o CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp\"",
   "file": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp"
 },
 {
   "directory": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build",
-  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/sources/src/Block.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp\"",
+  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -O3 -DNDEBUG   -o CMakeFiles/libModulos.dir/sources/src/Block.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp\"",
   "file": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp"
 },
 {
   "directory": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build",
-  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -g   -o CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp\"",
+  "command": "/usr/bin/clang++-3.8    -I\"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/headers\"   -std=c++1y -Wall -Wextra -O3 -DNDEBUG   -o CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o -c \"/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp\"",
   "file": "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp"
 }
 ]

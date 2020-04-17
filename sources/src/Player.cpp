@@ -10,7 +10,7 @@ Player::Player(int posx, int posy)
     y = posy;
 
     hitbox.setPosition(x, y);
-    movespeed = 1.5f;
+    movespeed = 2.f;
 
 
     for(int i = 0; i < 4; i++) {
@@ -50,16 +50,16 @@ void Player::loadAnimations()
 
     // PUSHING ANIMATIONS
     push_left.setFrames(IntRect(16*2, 16, 16, 16), IntRect(16*3, 16, 16, 16));
-    push_left.loopXtimes(1);
+    push_left.loopXtimes(3);
 
     push_right.setFrames(IntRect(16*6, 16, 16, 16), IntRect(16*7, 16, 16, 16));
-    push_right.loopXtimes(1);
+    push_right.loopXtimes(3);
 
     push_up.setFrames(IntRect(16*4, 16, 16, 16), IntRect(16*5, 16, 16, 16));
-    push_up.loopXtimes(1);
+    push_up.loopXtimes(3);
 
     push_down.setFrames(IntRect(16*0, 16, 16, 16), IntRect(16*1, 16, 16, 16));
-    push_down.loopXtimes(1);
+    push_down.loopXtimes(3);
 
 
 
@@ -226,8 +226,7 @@ void Player::update(float elapsedTime)
             playingAnimation = false;
         }
     }
-
-
+    
     if(!walking) {
         // pushingBlocks();
     } else {
@@ -239,7 +238,7 @@ void Player::update(float elapsedTime)
         }
 
     }
-
+    //hitbox.move(x*elapsedTime, y*elapsedTime);
     hitbox.setPosition(x, y);
     currentAnim->setPosition(sf::Vector2f(x, y));
     currentAnim->update();
@@ -335,10 +334,13 @@ void Player::pushingBlocks(std::string direction)
 
 void Player::draw(sf::RenderWindow& window)
 {
-    window.draw(hitbox);
+    //window.draw(hitbox);
     currentAnim->draw(window);
+    
+    /*
     for(int i = 0; i < 4; i++) {
         window.draw(colisions[i]);
     }
+    */
 
 }

@@ -19,7 +19,7 @@ class Animation {
         bool finished = false;
         bool isPlaying = true;
         int loopNumbers = 0;
-        int times = 0;
+        int times = 1;
 
     public:
         Animation(std::string textureName, int sprSize, float animationVelocity);

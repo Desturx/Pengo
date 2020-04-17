@@ -48,8 +48,11 @@ void Animation::update()
                 // std::cout << "Se ha hecho: " << times << std::endl;
                 if(times <= loopNumbers) {
                     if(actualF.left == lastF.left) {
-                        actualF.left = firstF.left;
+                        if(times < loopNumbers){
+                            actualF.left = firstF.left;
+                        }
                         times++;
+
                     } else {
                         actualF.left += sprSize;
                     }
@@ -68,9 +71,6 @@ void Animation::update()
 
         
     }
-
-    // Moving the sprite with the character
-    // sprite.move(movement*mTime);
 }
 
 void Animation::noLoop() 
@@ -100,7 +100,7 @@ void Animation::loopXtimes(int timesToLoop)
 
 void Animation::reset()
 {
-    times = 0;
+    times = 1;
     finished = false;
 }
 

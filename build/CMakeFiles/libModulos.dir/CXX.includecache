@@ -17,6 +17,8 @@ SFML/Graphics.hpp
 -
 Player.h
 ../sources/headers/Player.h
+Animation.h
+../sources/headers/Animation.h
 
 ../sources/headers/Game.h
 SFML/Graphics.hpp

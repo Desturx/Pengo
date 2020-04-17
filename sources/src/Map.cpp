@@ -176,12 +176,10 @@ void Map::createSprites()
                 colisions[j][k] = 0;
                 if(gid > 0 && gid < width*height) 
                 {
-
-                    
                     if(gid == 1) 
                     {
                         // COLOCAR LOS SPRITES DE LOS BLOQUES AZULES Y MANDARLOS
-                        Block* newBlock = new Block(tileSetTexture, tilesetSprite[gid].getTextureRect(), sf::Vector2f(k*tilewidth, j*tileHeight) );
+                        Block* newBlock = new Block(tileSetTexture, tilesetSprite[gid].getTextureRect(), sf::Vector2f(k*tilewidth, j*tileHeight), "NORMAL" );
                         dest_blocks.push_back(newBlock);
                         colisions[j][k] = 1;
 
@@ -189,8 +187,8 @@ void Map::createSprites()
                     else if(gid == 3)
                     {
                         colisions[j][k] = 2;
-                        mapSprite[i][j][k] = new sf::Sprite(tileSetTexture, tilesetSprite[gid].getTextureRect());
-                        mapSprite[i][j][k]->setPosition(k*tilewidth, j*tileHeight);
+                        Block* newBlock = new Block(tileSetTexture, tilesetSprite[gid].getTextureRect(), sf::Vector2f(k*tilewidth, j*tileHeight), "SPECIAL");
+                        dest_blocks.push_back(newBlock);
                     } 
                     else
                     {
@@ -271,22 +269,67 @@ void Map::update(Player *player)
 
     for(unsigned i = 0; i < dest_blocks.size(); i++) {
 
-        float distanceX = player->getPosition().x - dest_blocks.at(i)->getPosition().x;
-        float distanceY = player->getPosition().y - dest_blocks.at(i)->getPosition().y;
-        float final = sqrt(pow(distanceX, 2)+pow(distanceY, 2));
+        if(!dest_blocks.at(i)->getDestroyed())
+        {
+            float distanceX = player->getPosition().x - dest_blocks.at(i)->getPosition().x;
+            float distanceY = player->getPosition().y - dest_blocks.at(i)->getPosition().y;
+            float final = sqrt(pow(distanceX, 2)+pow(distanceY, 2));
 
-        if(final <= 16.f && !dest_blocks.at(i)->getMoving()) { // si el bloque no se mueve
-            
-            dest_blocks.at(i)->update(player);
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) 
+            if(final <= 16.f && !dest_blocks.at(i)->getMoving()) { // si el bloque no se mueve
+                dest_blocks.at(i)->update(player);
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) 
+                {
+                    if(!player->isMoving()) 
+                    {
+                        if(player->getDirection().compare(dest_blocks.at(i)->getDirIsColliding())== 0)
+                        {
+                            updateColisions(dest_blocks.at(i), player->getDirection());
+                            player->pushingBlocks(player->getDirection());
+                        }
+                    }
+                    
+                }
+            }
+            else if(dest_blocks.at(i)->getMoving()) // si el bloque se está moviendo
             {
-                updateColisions(dest_blocks.at(i), player->getDirection());
+                dest_blocks.at(i)->update2(player);
+            }
+
+            // TO PUT THE COLISION IN THE RIGTH PLACE(JUST IN CASE)
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::T)) 
+            {
+                for(int i = 0; i < height; i ++) {
+                    for(int j = 0; j < width; j++) {
+                        colisions[i][j] = 0;
+                    }
+                }
+                int row = dest_blocks.at(i)->getPosition().y/16;
+                int col = dest_blocks.at(i)->getPosition().x/16;
+                colisions[row][col] = 1;
+
             }
         }
-        else if(dest_blocks.at(i)->getMoving()) // si el bloque se está moviendo
-        {
-            dest_blocks.at(i)->update2(player);
+        else
+        {   
+            dest_blocks.at(i)->updateAnimation();
+
+            if(dest_blocks.at(i)->getDirIsColliding().compare(player->getDirection()) == 0)
+            {
+                if(dest_blocks.at(i)->isAnimationFinished())
+                {
+                    int row = dest_blocks.at(i)->getPosition().y/16;
+                    int col = dest_blocks.at(i)->getPosition().x/16;
+                    colisions[row][col] = 0;
+                    player->setColision(player->getDirection(), true);
+                    delete dest_blocks.at(i);
+                    dest_blocks.erase(dest_blocks.begin()+i);
+                    
+                }
+                
+            }
+
         }
+        
     }
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
@@ -310,11 +353,19 @@ void Map::updateColisions(Block* block, std::string direction)
         while(colisions[rowFinal][colFinal] == 0) 
         {
             rowFinal--;
-            // dependiendo de hacia que posición se tenga que dirigir
         } 
-        // dependiendo de hacia que posición vaya sumo o resto
         rowFinal++;
-        block->setNextSpot(rowFinal*16, direction);
+
+        if(row == rowFinal) 
+        { // if the position isn't modified it has to break
+            if(block->getType().compare("NORMAL") == 0) {
+                block->destroyBlock();
+            }
+        } 
+        else 
+        {// else it can move to the next spot
+            block->setNextSpot(rowFinal*16, direction);
+        }
     }
     else if(direction.compare("DOWN") == 0) 
     {
@@ -323,7 +374,15 @@ void Map::updateColisions(Block* block, std::string direction)
             rowFinal++;
         } 
         rowFinal--;
-        block->setNextSpot(rowFinal*16, direction);
+
+        if(row == rowFinal) 
+        { // if the position isn't modified it has to break
+            block->destroyBlock();
+        } 
+        else 
+        {// else it can move to the next spot
+            block->setNextSpot(rowFinal*16, direction);
+        }
     }
     else if(direction.compare("LEFT") == 0)
     {
@@ -332,7 +391,15 @@ void Map::updateColisions(Block* block, std::string direction)
             colFinal--;
         } 
         colFinal++;
-        block->setNextSpot(colFinal*16, direction);
+
+        if(col == colFinal) 
+        { // if the position isn't modified it has to break
+            block->destroyBlock();
+        } 
+        else 
+        {// else it can move to the next spot
+            block->setNextSpot(colFinal*16, direction);
+        }
 
     }
     else if(direction.compare("RIGHT") == 0)
@@ -342,7 +409,15 @@ void Map::updateColisions(Block* block, std::string direction)
             colFinal++;
         } 
         colFinal--;
-        block->setNextSpot(colFinal*16, direction);
+        
+        if(col == colFinal) 
+        { // if the position isn't modified it has to break
+            block->destroyBlock();
+        } 
+        else 
+        {// else it can move to the next spot
+            block->setNextSpot(colFinal*16, direction);
+        }
     }
 
     colisions[rowFinal][colFinal] = 1;

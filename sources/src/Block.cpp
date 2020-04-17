@@ -2,13 +2,22 @@
 
 /*
 Constructor of the block, it recieves a size, a position and a sprite
+blockType = "SPECIAL" or "NORMAL"
 */
-Block::Block(sf::Texture &txt,sf::IntRect tamSprite, sf::Vector2f position)
+Block::Block(sf::Texture &txt,sf::IntRect tamSprite, sf::Vector2f position, std::string blockType)
 {
+    type = blockType;
+
     hitbox = sf::RectangleShape(sf::Vector2f(16.f, 16.f));
     hitbox.setPosition(position);
     sprite = sf::Sprite(txt, tamSprite);
     sprite.setPosition(position);
+
+    using namespace sf;
+    breaking.setFrames(IntRect(16*0, 0, 16, 16), IntRect(16*8, 0, 16, 16));
+    breaking.loopXtimes(1);
+
+    breaking.setPosition(position);
 
     x = position.x;
     y = position.y;
@@ -19,6 +28,9 @@ Block::~Block()
     
 }
 
+/*
+Is called only when the block is stopped
+*/
 void Block::update(Player *player)
 {
 
@@ -56,9 +68,10 @@ void Block::update(Player *player)
 void Block::update2(Player *player)
 {
     //std::cout << "llamandose"<< std::endl;
+    //player->pushingBlocks(dir);
+
     if(isMoving) 
     {
-        player->pushingBlocks(dir);
 
         if(dir.compare("UP") == 0) 
         {
@@ -96,11 +109,17 @@ void Block::update2(Player *player)
 
         hitbox.setPosition(x, y);
         sprite.setPosition(x, y);
-
+        breaking.setPosition(sf::Vector2f(x, y));
         
         player->setColision(player->getDirection(), true);
         //player->hasColided = false;
     }
+}
+
+
+void Block::updateAnimation()
+{
+    breaking.update();
 }
 
 void Block::setNextSpot(int next, std::string direction)
@@ -113,6 +132,16 @@ void Block::setNextSpot(int next, std::string direction)
     }
 }
 
+void Block::destroyBlock()
+{
+    // CHANGE THE ANIMATION TO THE DESTROYING BLOCK
+    // AND WHEN THE ANIMATION FINISHES THEN DESTROY THE BLOCK
+    if(type.compare("NORMAL")== 0){
+        destroyed = true;
+    } 
+
+}
+
 sf::FloatRect Block::getGlobalBounds()
 {
     return hitbox.getGlobalBounds();
@@ -122,9 +151,6 @@ sf::Vector2f Block::getPosition()
 {
     return hitbox.getPosition();
 }
-
-
-
 
 /*
 Just to use it as a gizmo to see if the block was drawn
@@ -136,5 +162,12 @@ void Block::drawGizmo(sf::RenderWindow& window)
 
 void Block::draw(sf::RenderWindow& window)
 {
-    window.draw(sprite);
+    if(!destroyed)
+    {
+        window.draw(sprite);
+    } 
+    else 
+    {
+        breaking.draw(window);
+    }
 }

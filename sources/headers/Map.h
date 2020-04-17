@@ -21,7 +21,6 @@ class Map {
         std::string imageFile;
         sf::Texture tileSetTexture;
 
-
         int numlayers = 0;
         int*** tileMap;
 
@@ -31,7 +30,6 @@ class Map {
         std::vector<Block*> dest_blocks;
         int** colisions;
         
-
     public:
         Map();
         virtual ~Map();
