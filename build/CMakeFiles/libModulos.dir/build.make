@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo"
+CMAKE_SOURCE_DIR = "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build"
+CMAKE_BINARY_DIR = "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/libModulos.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/libModulos.dir/flags.make
 
 CMakeFiles/libModulos.dir/sources/src/Game.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/sources/src/Game.cpp.o: ../sources/src/Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/libModulos.dir/sources/src/Game.cpp.o"
-	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/Game.cpp.o -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/libModulos.dir/sources/src/Game.cpp.o"
+	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/Game.cpp.o -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp"
 
 CMakeFiles/libModulos.dir/sources/src/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/sources/src/Game.cpp.i"
-	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp" > CMakeFiles/libModulos.dir/sources/src/Game.cpp.i
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp" > CMakeFiles/libModulos.dir/sources/src/Game.cpp.i
 
 CMakeFiles/libModulos.dir/sources/src/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/sources/src/Game.cpp.s"
-	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp" -o CMakeFiles/libModulos.dir/sources/src/Game.cpp.s
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp" -o CMakeFiles/libModulos.dir/sources/src/Game.cpp.s
 
 CMakeFiles/libModulos.dir/sources/src/Game.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/libModulos.dir/sources/src/Game.cpp.o.provides.build: CMakeFiles/libM
 
 CMakeFiles/libModulos.dir/sources/src/Map.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/sources/src/Map.cpp.o: ../sources/src/Map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/libModulos.dir/sources/src/Map.cpp.o"
-	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/Map.cpp.o -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/libModulos.dir/sources/src/Map.cpp.o"
+	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/Map.cpp.o -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp"
 
 CMakeFiles/libModulos.dir/sources/src/Map.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/sources/src/Map.cpp.i"
-	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp" > CMakeFiles/libModulos.dir/sources/src/Map.cpp.i
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp" > CMakeFiles/libModulos.dir/sources/src/Map.cpp.i
 
 CMakeFiles/libModulos.dir/sources/src/Map.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/sources/src/Map.cpp.s"
-	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp" -o CMakeFiles/libModulos.dir/sources/src/Map.cpp.s
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp" -o CMakeFiles/libModulos.dir/sources/src/Map.cpp.s
 
 CMakeFiles/libModulos.dir/sources/src/Map.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/libModulos.dir/sources/src/Map.cpp.o.provides.build: CMakeFiles/libMo
 
 CMakeFiles/libModulos.dir/sources/src/Player.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/sources/src/Player.cpp.o: ../sources/src/Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/libModulos.dir/sources/src/Player.cpp.o"
-	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/Player.cpp.o -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/libModulos.dir/sources/src/Player.cpp.o"
+	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/Player.cpp.o -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp"
 
 CMakeFiles/libModulos.dir/sources/src/Player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/sources/src/Player.cpp.i"
-	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp" > CMakeFiles/libModulos.dir/sources/src/Player.cpp.i
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp" > CMakeFiles/libModulos.dir/sources/src/Player.cpp.i
 
 CMakeFiles/libModulos.dir/sources/src/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/sources/src/Player.cpp.s"
-	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp" -o CMakeFiles/libModulos.dir/sources/src/Player.cpp.s
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp" -o CMakeFiles/libModulos.dir/sources/src/Player.cpp.s
 
 CMakeFiles/libModulos.dir/sources/src/Player.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/libModulos.dir/sources/src/Player.cpp.o.provides.build: CMakeFiles/li
 
 CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o: ../sources/src/Animation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o"
-	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o"
+	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp"
 
 CMakeFiles/libModulos.dir/sources/src/Animation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/sources/src/Animation.cpp.i"
-	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp" > CMakeFiles/libModulos.dir/sources/src/Animation.cpp.i
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp" > CMakeFiles/libModulos.dir/sources/src/Animation.cpp.i
 
 CMakeFiles/libModulos.dir/sources/src/Animation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/sources/src/Animation.cpp.s"
-	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp" -o CMakeFiles/libModulos.dir/sources/src/Animation.cpp.s
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp" -o CMakeFiles/libModulos.dir/sources/src/Animation.cpp.s
 
 CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/libModulos.dir/sources/src/Block.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/sources/src/Block.cpp.o: ../sources/src/Block.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/libModulos.dir/sources/src/Block.cpp.o"
-	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/Block.cpp.o -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/libModulos.dir/sources/src/Block.cpp.o"
+	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/Block.cpp.o -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp"
 
 CMakeFiles/libModulos.dir/sources/src/Block.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/sources/src/Block.cpp.i"
-	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp" > CMakeFiles/libModulos.dir/sources/src/Block.cpp.i
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp" > CMakeFiles/libModulos.dir/sources/src/Block.cpp.i
 
 CMakeFiles/libModulos.dir/sources/src/Block.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/sources/src/Block.cpp.s"
-	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp" -o CMakeFiles/libModulos.dir/sources/src/Block.cpp.s
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp" -o CMakeFiles/libModulos.dir/sources/src/Block.cpp.s
 
 CMakeFiles/libModulos.dir/sources/src/Block.cpp.o.requires:
 
@@ -177,18 +177,42 @@ CMakeFiles/libModulos.dir/sources/src/Block.cpp.o.provides: CMakeFiles/libModulo
 CMakeFiles/libModulos.dir/sources/src/Block.cpp.o.provides.build: CMakeFiles/libModulos.dir/sources/src/Block.cpp.o
 
 
+CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o: CMakeFiles/libModulos.dir/flags.make
+CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o: ../sources/src/Enemy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o"
+	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Enemy.cpp"
+
+CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.i"
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Enemy.cpp" > CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.i
+
+CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.s"
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Enemy.cpp" -o CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.s
+
+CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o.requires:
+
+.PHONY : CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o.requires
+
+CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o.provides: CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o.requires
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o.provides.build
+.PHONY : CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o.provides
+
+CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o.provides.build: CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o
+
+
 CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o: CMakeFiles/libModulos.dir/flags.make
 CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o: ../sources/src/tinyxml2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o"
-	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o"
+	/usr/bin/clang++-3.8   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp"
 
 CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.i"
-	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp" > CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.i
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp" > CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.i
 
 CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.s"
-	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp" -o CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.s
+	/usr/bin/clang++-3.8  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp" -o CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.s
 
 CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o.requires:
 
@@ -208,6 +232,7 @@ libModulos_OBJECTS = \
 "CMakeFiles/libModulos.dir/sources/src/Player.cpp.o" \
 "CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o" \
 "CMakeFiles/libModulos.dir/sources/src/Block.cpp.o" \
+"CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o" \
 "CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o"
 
 # External object files for target libModulos
@@ -218,10 +243,11 @@ liblibModulos.a: CMakeFiles/libModulos.dir/sources/src/Map.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/sources/src/Player.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/sources/src/Block.cpp.o
+liblibModulos.a: CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o
 liblibModulos.a: CMakeFiles/libModulos.dir/build.make
 liblibModulos.a: CMakeFiles/libModulos.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library liblibModulos.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library liblibModulos.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/libModulos.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/libModulos.dir/link.txt --verbose=$(VERBOSE)
 
@@ -235,6 +261,7 @@ CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/sources/src/Map.cp
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/sources/src/Player.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/sources/src/Block.cpp.o.requires
+CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o.requires
 CMakeFiles/libModulos.dir/requires: CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o.requires
 
 .PHONY : CMakeFiles/libModulos.dir/requires
@@ -244,6 +271,6 @@ CMakeFiles/libModulos.dir/clean:
 .PHONY : CMakeFiles/libModulos.dir/clean
 
 CMakeFiles/libModulos.dir/depend:
-	cd "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/libModulos.dir/depend
 

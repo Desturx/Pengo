@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/libModulos.dir/sources/src/Player.cpp.o"
   "CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o"
   "CMakeFiles/libModulos.dir/sources/src/Block.cpp.o"
+  "CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o"
   "CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o"
   "liblibModulos.pdb"
   "liblibModulos.a"

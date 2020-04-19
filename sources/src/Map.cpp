@@ -11,6 +11,14 @@ void Map::loadLevel()
     setData();
     loadTextures();
     createSprites();
+
+    Enemy* enemy = new Enemy(6*16, 5*16);
+    // Enemy* enemy2 = new Enemy(2*16, 8*16);
+    enemies.push_back(enemy);
+    // enemies.push_back(enemy2);
+
+    std::cout << "width del mapa: " << width << std::endl;
+    std::cout << "heigth del mapa: " << height<< std::endl;
 }
 
 
@@ -336,6 +344,12 @@ void Map::update(Player *player)
         printData();
     }
 
+    // Update for the enemies
+    for(unsigned i = 0; i < enemies.size(); i++) {
+        checkEnemyColisions(enemies.at(i));
+        enemies.at(i)->update();
+    }
+
 }
 
 
@@ -424,6 +438,114 @@ void Map::updateColisions(Block* block, std::string direction)
     //block->setPosition(sf::Vector2f(colFinal*16, rowFinal*16));
 }
 
+void Map::checkEnemyColisions(Enemy* e)
+{
+
+    int row = e->getPosition().y/16;
+    int col = e->getPosition().x/16;
+    int dir =  e->getDirMoving();
+    
+    int rowFinal = row;
+    int colFinal = col;
+    bool collides = false;
+
+    if(dir == 1) // moves up
+    {
+        rowFinal = e->getNextSpot()/16;
+        
+        while(row > rowFinal) 
+        {
+            if(colisions[row][col] != 0) 
+            {
+                e->stopMoving((row+1)*16, 1);
+                collides = true;
+                break;
+            }
+            else
+            {
+                row--;
+            }
+        }
+        if(!collides)
+        {
+            e->stopMoving((rowFinal)*16, 1);
+        }
+    }
+    else if(dir == 2) // moves rigth
+    {
+        colFinal = e->getNextSpot()/16;
+
+        while(col < colFinal)
+        {
+            if(colisions[row][col] != 0)
+            {
+                e->stopMoving((col-1)*16, 2);
+                collides = true;
+                break;
+            }
+            else
+            {
+                col++;
+            }
+            
+        }
+        if (!collides)
+        {
+            e->stopMoving(colFinal*16, 2);
+        }
+        
+
+    }
+    else if(dir == 3) // moves down
+    {
+        rowFinal = e->getNextSpot()/16;
+        while(row < rowFinal) 
+        {
+            if(colisions[row][col] != 0) 
+            {
+                e->stopMoving((row-1)*16, 3);
+                collides = true;
+                break;
+            }
+            else
+            {
+                row++;
+            }
+        } 
+        if (!collides)
+        {
+            e->stopMoving(rowFinal*16, 3);
+        }
+        
+
+    }
+    else if (dir == 4) // moves left
+    {
+        colFinal = e->getNextSpot()/16;
+
+        while (col > colFinal)
+        {
+            if(colisions[row][col] != 0)
+            {
+                e->stopMoving((col+1)*16, 4);
+                collides = true;
+                break;
+            }
+            else
+            {
+                col--;
+            }
+        }
+        if (!collides)
+        {
+            e->stopMoving(colFinal*16, 4);  
+        }
+        
+    }
+    
+}
+
+
 void Map::draw(sf::RenderWindow& window)
 {
     for(int l = 0; l < numlayers; l++) {
@@ -441,8 +563,14 @@ void Map::draw(sf::RenderWindow& window)
     for(unsigned i = 0; i < dest_blocks.size(); i++) {
         dest_blocks.at(i)->draw(window);
         // dest_blocks.at(i)->drawGizmo(window);
-
     }
+    
+
+    for(unsigned i = 0; i < enemies.size(); i++) {
+        enemies.at(i)->draw(window);
+        // dest_blocks.at(i)->drawGizmo(window);
+    }
+    
 }
 
 

@@ -3,31 +3,37 @@
 
 CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o
  ../sources/headers/Animation.h
- /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp
+ /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp
 CMakeFiles/libModulos.dir/sources/src/Block.cpp.o
  ../sources/headers/Animation.h
  ../sources/headers/Block.h
  ../sources/headers/Player.h
- /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp
+ /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp
+CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o
+ ../sources/headers/Animation.h
+ ../sources/headers/Enemy.h
+ /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Enemy.cpp
 CMakeFiles/libModulos.dir/sources/src/Game.cpp.o
  ../sources/headers/Animation.h
  ../sources/headers/Block.h
+ ../sources/headers/Enemy.h
  ../sources/headers/Game.h
  ../sources/headers/Map.h
  ../sources/headers/Player.h
  ../sources/headers/tinyxml2.h
- /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp
+ /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp
 CMakeFiles/libModulos.dir/sources/src/Map.cpp.o
  ../sources/headers/Animation.h
  ../sources/headers/Block.h
+ ../sources/headers/Enemy.h
  ../sources/headers/Map.h
  ../sources/headers/Player.h
  ../sources/headers/tinyxml2.h
- /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp
+ /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp
 CMakeFiles/libModulos.dir/sources/src/Player.cpp.o
  ../sources/headers/Animation.h
  ../sources/headers/Player.h
- /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp
+ /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp
 CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o
  ../sources/headers/tinyxml2.h
- /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp
+ /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp

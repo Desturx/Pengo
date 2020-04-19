@@ -1,2 +1,2 @@
-/usr/bin/ar qc liblibModulos.a  CMakeFiles/libModulos.dir/sources/src/Game.cpp.o CMakeFiles/libModulos.dir/sources/src/Map.cpp.o CMakeFiles/libModulos.dir/sources/src/Player.cpp.o CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o CMakeFiles/libModulos.dir/sources/src/Block.cpp.o CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o
+/usr/bin/ar qc liblibModulos.a  CMakeFiles/libModulos.dir/sources/src/Game.cpp.o CMakeFiles/libModulos.dir/sources/src/Map.cpp.o CMakeFiles/libModulos.dir/sources/src/Player.cpp.o CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o CMakeFiles/libModulos.dir/sources/src/Block.cpp.o CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o
 /usr/bin/ranlib liblibModulos.a

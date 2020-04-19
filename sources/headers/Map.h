@@ -3,7 +3,7 @@
 #include <iostream>
 #include "tinyxml2.h"
 #include "Block.h"
-
+#include "Enemy.h"
 class Player;
 
 class Map {
@@ -30,6 +30,10 @@ class Map {
         std::vector<Block*> dest_blocks;
         int** colisions;
         
+        std::vector<Enemy*> enemies;
+
+
+        
     public:
         Map();
         virtual ~Map();
@@ -44,7 +48,7 @@ class Map {
 
         void printData();
         void updateColisions(Block *block, std::string direction);
-
+        void checkEnemyColisions(Enemy *e);
         sf::Vector2f getViewPosition();
         sf::Vector2f getPlayerPosition();
 

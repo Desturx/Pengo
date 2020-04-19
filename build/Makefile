@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo"
+CMAKE_SOURCE_DIR = "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build"
+CMAKE_BINARY_DIR = "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -217,6 +217,33 @@ sources/src/Block.cpp.s:
 	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Block.cpp.s
 .PHONY : sources/src/Block.cpp.s
 
+sources/src/Enemy.o: sources/src/Enemy.cpp.o
+
+.PHONY : sources/src/Enemy.o
+
+# target to build an object file
+sources/src/Enemy.cpp.o:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o
+.PHONY : sources/src/Enemy.cpp.o
+
+sources/src/Enemy.i: sources/src/Enemy.cpp.i
+
+.PHONY : sources/src/Enemy.i
+
+# target to preprocess a source file
+sources/src/Enemy.cpp.i:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.i
+.PHONY : sources/src/Enemy.cpp.i
+
+sources/src/Enemy.s: sources/src/Enemy.cpp.s
+
+.PHONY : sources/src/Enemy.s
+
+# target to generate assembly for a file
+sources/src/Enemy.cpp.s:
+	$(MAKE) -f CMakeFiles/libModulos.dir/build.make CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.s
+.PHONY : sources/src/Enemy.cpp.s
+
 sources/src/Game.o: sources/src/Game.cpp.o
 
 .PHONY : sources/src/Game.o
@@ -344,6 +371,9 @@ help:
 	@echo "... sources/src/Block.o"
 	@echo "... sources/src/Block.i"
 	@echo "... sources/src/Block.s"
+	@echo "... sources/src/Enemy.o"
+	@echo "... sources/src/Enemy.i"
+	@echo "... sources/src/Enemy.s"
 	@echo "... sources/src/Game.o"
 	@echo "... sources/src/Game.i"
 	@echo "... sources/src/Game.s"

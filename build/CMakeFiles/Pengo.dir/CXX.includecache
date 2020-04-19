@@ -20,6 +20,14 @@ Player.h
 Animation.h
 ../sources/headers/Animation.h
 
+../sources/headers/Enemy.h
+SFML/Graphics.hpp
+-
+iostream
+-
+Animation.h
+../sources/headers/Animation.h
+
 ../sources/headers/Game.h
 SFML/Graphics.hpp
 -
@@ -39,6 +47,8 @@ tinyxml2.h
 ../sources/headers/tinyxml2.h
 Block.h
 ../sources/headers/Block.h
+Enemy.h
+../sources/headers/Enemy.h
 
 ../sources/headers/Player.h
 SFML/Graphics.hpp
@@ -78,15 +88,15 @@ android/log.h
 assert.h
 -
 
-/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/include/config.h
+/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/include/config.h
 
-/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/main.cpp
+/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/main.cpp
 SFML/Graphics.hpp
 -
 iostream
 -
 include/config.h
-/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/include/config.h
+/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/include/config.h
 Game.h
-/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/Game.h
+/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/Game.h
 

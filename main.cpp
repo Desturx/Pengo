@@ -5,8 +5,10 @@
 #include "Game.h"
 
 int main() {
-  Game newGame;
 
+  srand (time(NULL));
+  
+  Game newGame;
   newGame.start();
 
   return EXIT_SUCCESS;
