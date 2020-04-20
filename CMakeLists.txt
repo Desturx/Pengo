@@ -26,3 +26,5 @@ if (SFML_FOUND)
     target_link_libraries(Pengo ${SFML_LIBRARIES})
 endif()
 
+set(CMAKE_BUILD_TYPE Debug) 
+set(CMAKE_BUILD_TYPE RelWithDebInfo)

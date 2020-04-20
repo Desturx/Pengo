@@ -9,9 +9,9 @@
             "name": "(gdb) Iniciar",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/Pengo", 
+            "program": "${workspaceFolder}/build/Pengo", 
             "args": [],
-            "stopAtEntry": false,
+            "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
@@ -20,7 +20,7 @@
                 {
                     "description": "Habilitar la impresión con sangría para gdb",
                     "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
+                    "ignoreFailures": false
                 }
             ]
         }
