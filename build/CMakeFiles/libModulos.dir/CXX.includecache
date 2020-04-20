@@ -88,33 +88,33 @@ android/log.h
 assert.h
 -
 
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp
 Animation.h
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.h
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.h
 
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp
 Block.h
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.h
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.h
 
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Enemy.cpp
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Enemy.cpp
 Enemy.h
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Enemy.h
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Enemy.h
 
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp
 Game.h
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.h
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.h
 
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp
 Map.h
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.h
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.h
 
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp
 Player.h
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.h
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.h
 
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp
 tinyxml2.h
-/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.h
+/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.h
 new
 -
 stddef.h

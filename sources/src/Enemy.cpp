@@ -13,12 +13,18 @@ Enemy::Enemy(float posx, float posy)
     for(int i = 0; i < 4; i++) {
         move[i] = false;
         canGo[i] = true;
+        collides[i] = true;
     }
 }
 
 Enemy::~Enemy()
 {
-    delete actual;
+    // delete actual;
+}
+
+void Enemy::kill()
+{
+    dead = true;
 }
 
 void Enemy::update()
@@ -33,59 +39,86 @@ void Enemy::update()
 
 }
 
+void Enemy::setDir()
+{
+    int dir = rand() % 4 + 1;
+
+    if(dir == 1)
+    {
+        if(collides[UP])
+        {
+            dirMoving = dir;
+        }
+        else
+        {
+            dirMoving = 0;
+        }
+    }
+    
+    if(dir == 2)
+    {
+        if(collides[RIGHT])
+        {
+            dirMoving = dir;
+
+        }
+        else
+        {
+            dirMoving = 0;
+        }
+    }
+    
+    if(dir == 3)
+    {
+        if(collides[DOWN])
+        {
+            dirMoving = dir;
+        }
+        else
+        {
+            dirMoving = 0;
+        }
+        
+    }
+    
+    if (dir == 4)
+    {
+        if(collides[LEFT])
+        {
+            dirMoving = dir;
+
+        }
+        else
+        {
+            dirMoving = 0;
+        }
+        
+    }
+
+}
 
 void Enemy::chooseDirection()
 {
-    int dir = rand() % 4 + 1;
+    //int dir = rand() % 4 + 1;
     int finalX = hitbox.getPosition().x/16;
     int finalY = hitbox.getPosition().y/16;
-    if(!canGo[UP])
+    
+    do
     {
-        while(dir == 1)
-        {
-            dir = rand() % 4 + 1;
-        }
-    }
-    else if(!canGo[DOWN])
-    {
-        while(dir == 3)
-        {
-            dir = rand() % 4 + 1;
-        } 
-
-    }
-    else if(!canGo[RIGHT])
-    {
-        while(dir == 2)
-        {
-            dir = rand() % 4 + 1;
-        }
-
-    }
-    else if(!canGo[LEFT])
-    {
-        while (dir == 4)
-        {
-            dir = rand() % 4 + 1;
-        }
-    }
-
-
+        setDir();
+        //std::cout << dirMoving << std::endl;
+    } while (dirMoving == 0);
+    
 
     if(!walking)
     {
-        dirMoving = dir;
+        //dirMoving = dir;
         ready = false;
-
-
-        if(dir == 1) // moves up
+        if(dirMoving == 1) // moves up
         {
             std::cout << "moves up" << std::endl;
             move[UP] = true;
-            walking = true;
-            
-            //std::cout << "lastY" << lastY << ", actualY: " << finalY << std::endl;
-            
+            walking = true;            
             if(lastY != 1 && finalY != 1)
             {
                 while(finalY == lastY)
@@ -105,10 +138,9 @@ void Enemy::chooseDirection()
             }
             nextSpot = finalY*16;
             lastY = finalY;
-            //std::cout << "Next position: " << finalX << ", " << finalY << std::endl;
         }
 
-        if(dir == 2) // moves rigth
+        if(dirMoving == 2) // moves rigth
         {
             std::cout << "moves rigth" << std::endl;
             move[RIGHT] = true;
@@ -138,7 +170,7 @@ void Enemy::chooseDirection()
 
         }
 
-        if(dir == 3) // moves down
+        if(dirMoving == 3) // moves down
         {
             std::cout << "moves down" << std::endl;
             move[DOWN] = true;
@@ -168,7 +200,7 @@ void Enemy::chooseDirection()
 
         }
 
-        if(dir == 4) // moves left
+        if(dirMoving == 4) // moves left
         {   
             std::cout << "moves left" << std::endl;
             move[LEFT] = true;
@@ -200,7 +232,6 @@ void Enemy::chooseDirection()
 
     }
 }
-
 
 void Enemy::moving()
 {
@@ -253,6 +284,26 @@ void Enemy::moving()
     }
 }
 
+void Enemy::setCanGo(int dir, bool value)
+{
+    if(dir == 1)
+    {
+        collides[UP] = value;
+    }
+    else if(dir == 2)
+    {
+        collides[RIGHT] = value;
+    }
+    else if(dir == 3)
+    {
+        collides[DOWN] = value;
+    }
+    else if(dir == 4)
+    {
+        collides[LEFT] = value;
+    }
+}
+
 void Enemy::stopMoving(int next, int dir)
 {
     nextSpot = next;
@@ -278,7 +329,6 @@ void Enemy::stopMoving(int next, int dir)
     
     
 }
-
 
 void Enemy::draw(sf::RenderWindow& window)
 {

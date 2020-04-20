@@ -8,13 +8,15 @@
 class Enemy {
     private:
         sf::RectangleShape hitbox;
-        Animation *actual;
+        // Animation *actual;
 
         enum MOVE {UP,DOWN,LEFT,RIGHT};
         bool move[4];
         bool canGo[4];
+        bool collides[4];
         bool walking = false;
         bool ready = false;
+        bool dead = false;
         float movespeed = 1.8f;
         sf::Clock clock;
         int x, y;
@@ -29,9 +31,13 @@ class Enemy {
         void chooseDirection();
         void moving();
         void stopMoving(int next, int dir);
+        void setCanGo(int dir, bool value);
         int getNextSpot(){return nextSpot;};
+        void setDir();
         int getDirMoving(){return dirMoving;};
         bool getIsMoving(){return walking;};
+        bool getDead(){return dead;};
+        void kill();
         sf::Vector2f getPosition(){return hitbox.getPosition();};
         void draw(sf::RenderWindow &window);
 

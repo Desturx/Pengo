@@ -227,7 +227,6 @@ sf::Vector2f Map::getViewPosition()
 
     while(object) {
         viewLayer = (std::string)object->Attribute("name");
-        
         if(viewLayer.compare("view") == 0) {
             object = object->FirstChildElement("object");
 
@@ -346,69 +345,198 @@ void Map::update(Player *player)
 
     // Update for the enemies
     for(unsigned i = 0; i < enemies.size(); i++) {
-        int row = enemies.at(i)->getPosition().y/16;
-        int col = enemies.at(i)->getPosition().x/16;
+       /*
+       (misma técnica que cuando empujo los bloques)
+       0º- comprobar en que direcciones se puede mover.
+       (si pruebo diviendo en pares las direcciones??)
+       1º- seleccionar una direccion a la que moverse
+       2º- seleccionar cantidad de bloques que se va a mover
+       3º- comprobar si hay algún bloque en el camino,
+           si lo hay, esa será su pos final.
+       4º- moverlo a esa posición
+       */
+
         
-        if(colisions[row][col] != 0)
+        
+        // 0º- comprobar en que direcciones se puede mover.
+        checkDirection(enemies.at(i));
+        
+        // 1º- seleccionar una direccion a la que moverse
+        
+        if(!enemies.at(i)->getWalking())
         {
-            enemies.at(i)->kill();
-        }
-        if(enemies.at(i)->getDead())
-        {
-            delete enemies.at(i);
-            enemies.erase(enemies.begin()+i);
-        }
-        else
-        {
-            checkDirection(enemies.at(i));
-            checkEnemyColisions(enemies.at(i));
-            enemies.at(i)->update();
+            do
+            {
+                enemies.at(i)->setDir();
+            } while (enemies.at(i)->getDir() == 0);
+
+            positionsMoved(enemies.at(i));
         }
         
+        // 2º- seleccionar cantidad de bloques que se va a mover
+        // 3º- comprobar si hay algún bloque en el camino, si lo hay, esa será su pos final.
+
+
+        enemies.at(i)->moving();
+
+        enemies.at(i)->setPosition();
+
     }
 
 }
 
-void Map::checkDirection(Enemy* e)
+void Map::positionsMoved(Enemy* e)
 {
+    int cant = rand() % 5 + 1;
     int row = e->getPosition().y/16;
     int col = e->getPosition().x/16;
 
-    if(colisions[row-1][col] != 0) // si arriba colisiona
-    {
-        e->setCanGo(1, false);
-    }
-    else
-    {
-        e->setCanGo(1, true);
-    }
+    int finalRow = row;
+    int finalCol = col;
 
-    if(colisions[row+1][col]) // si colisiona abajo
+    if(e->getDir() == 1) // moves up
     {
-        e->setCanGo(3, false);
-    }
-    else
-    {
-        e->setCanGo(3, true);
-    }
+        bool collides = false;
+        if(row - cant <= 0)
+        {
+            finalRow = 1;
+        }
+        else
+        {
+            finalRow-=cant;
+        }
+        
+        // Comprobamos si hay algun bloque por el camino
+        while(row > finalRow)
+        {
+            if(colisions[row][col] != 0)
+            {
+                collides = true;
+                break;
+            }
+            else
+            {
+                row --;
+            }
+        }
 
-    if(colisions[row][col+1]) // si colisiona derecha
-    {
-        e->setCanGo(2, false);
+        if(collides)
+        {
+            e->setNextSpot((row+1)*16);
+        }
+        else
+        {
+            e->setNextSpot((finalRow)*16);
+        }
     }
-    else
+    else if(e->getDir() == 2)// moves rigth
     {
-        e->setCanGo(2, true);
+        bool collides = false;
+        if(col + cant >= 14)
+        {
+            finalCol = 13;
+        }
+        else
+        {
+            finalCol += cant;
+        }
+        
+         while(col < finalCol)
+        {
+            if(colisions[row][col] != 0)
+            {
+                collides = true;
+                break;
+            }
+            else
+            {
+                col ++;
+            }
+        }
+
+        if(collides)
+        {
+            e->setNextSpot((col-1)*16);
+        }
+        else
+        {
+            e->setNextSpot((finalCol)*16);
+        }
     }
-    if(colisions[row][col-1]) // si colisiona izquierda
+    else if (e->getDir() == 3) // moves down
     {
-        e->setCanGo(4, false);
+        bool collides = false;
+        if(row + cant >= 16)
+        {
+            finalRow = 15;
+        }
+        else
+        {
+            finalRow+=cant;
+        }
+        
+        // Comprobamos si hay algun bloque por el camino
+        while(row < finalRow)
+        {
+            if(colisions[row][col] != 0)
+            {
+                collides = true;
+                break;
+            }
+            else
+            {
+                row ++;
+            }
+        }
+
+        if(collides)
+        {
+            e->setNextSpot((row-1)*16);
+        }
+        else
+        {
+            e->setNextSpot((finalRow)*16);
+        }
     }
-    else
+    else if(e->getDir() == 4) // moves left
     {
-        e->setCanGo(4, true);
+        bool collides = false;
+        if(col - cant <= 0)
+        {
+            finalCol = 1;
+        }
+        else
+        {
+            finalCol -= cant;
+        }
+        
+         while(col > finalCol)
+        {
+            if(colisions[row][col] != 0)
+            {
+                collides = true;
+                break;
+            }
+            else
+            {
+                col ++;
+            }
+        }
+
+        if(collides)
+        {
+            e->setNextSpot((col+1)*16);
+        }
+        else
+        {
+            e->setNextSpot((finalCol)*16);
+        }
     }
+    
+    
+
 }
+
 
 void Map::updateColisions(Block* block, std::string direction)
 {
@@ -495,113 +623,46 @@ void Map::updateColisions(Block* block, std::string direction)
     //block->setPosition(sf::Vector2f(colFinal*16, rowFinal*16));
 }
 
-void Map::checkEnemyColisions(Enemy* e)
+void Map::checkDirection(Enemy* e)
 {
-
     int row = e->getPosition().y/16;
     int col = e->getPosition().x/16;
-    int dir =  e->getDirMoving();
-    
-    int rowFinal = row;
-    int colFinal = col;
-    bool collides = false;
 
-    if(dir == 1) // moves up
+    if(colisions[row-1][col] != 0) // si arriba colisiona
     {
-        rowFinal = e->getNextSpot()/16;
-        
-        while(row > rowFinal) 
-        {
-            if(colisions[row][col] != 0) 
-            {
-                e->stopMoving((row+1)*16, 1);
-                collides = true;
-                break;
-            }
-            else
-            {
-                row--;
-            }
-        }
-        if(!collides)
-        {
-            e->stopMoving((rowFinal)*16, 1);
-        }
+        e->setCanGo(1, false);
     }
-    else if(dir == 2) // moves rigth
+    else
     {
-        colFinal = e->getNextSpot()/16;
-
-        while(col < colFinal)
-        {
-            if(colisions[row][col] != 0)
-            {
-                e->stopMoving((col-1)*16, 2);
-                collides = true;
-                break;
-            }
-            else
-            {
-                col++;
-            }
-            
-        }
-        if (!collides)
-        {
-            e->stopMoving(colFinal*16, 2);
-        }
-        
-
+        e->setCanGo(1, true);
     }
-    else if(dir == 3) // moves down
+
+    if(colisions[row+1][col]) // si colisiona abajo
     {
-        rowFinal = e->getNextSpot()/16;
-        while(row < rowFinal) 
-        {
-            if(colisions[row][col] != 0) 
-            {
-                e->stopMoving((row-1)*16, 3);
-                collides = true;
-                break;
-            }
-            else
-            {
-                row++;
-            }
-        } 
-        if (!collides)
-        {
-            e->stopMoving(rowFinal*16, 3);
-        }
-        
-
+        e->setCanGo(3, false);
     }
-    else if (dir == 4) // moves left
+    else
     {
-        colFinal = e->getNextSpot()/16;
-
-        while (col > colFinal)
-        {
-            if(colisions[row][col] != 0)
-            {
-                e->stopMoving((col+1)*16, 4);
-                collides = true;
-                break;
-            }
-            else
-            {
-                col--;
-            }
-        }
-        if (!collides)
-        {
-            e->stopMoving(colFinal*16, 4);  
-        }
-        
+        e->setCanGo(3, true);
     }
-    
+
+    if(colisions[row][col+1]) // si colisiona derecha
+    {
+        e->setCanGo(2, false);
+    }
+    else
+    {
+        e->setCanGo(2, true);
+    }
+    if(colisions[row][col-1]) // si colisiona izquierda
+    {
+        e->setCanGo(4, false);
+    }
+    else
+    {
+        e->setCanGo(4, true);
+    }
 }
-
 
 void Map::draw(sf::RenderWindow& window)
 {
@@ -624,10 +685,7 @@ void Map::draw(sf::RenderWindow& window)
     
 
     for(unsigned i = 0; i < enemies.size(); i++) {
-        if(!enemies.at(i)->getDead())
-        {
-            enemies.at(i)->draw(window);
-        }
+        enemies.at(i)->draw(window);
         // dest_blocks.at(i)->drawGizmo(window);
     }
     

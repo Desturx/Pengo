@@ -1,1 +1,1 @@
-/usr/bin/clang++-3.8    -std=c++1y -Wall -Wextra -O3 -DNDEBUG   CMakeFiles/Pengo.dir/main.cpp.o  -o Pengo -rdynamic liblibModulos.a -lsfml-system -lsfml-window -lsfml-graphics -lsfml-network -lsfml-audio 
+/usr/bin/clang++-3.8    -std=c++1y -Wall -Wextra -O2 -g -DNDEBUG   CMakeFiles/Pengo.dir/main.cpp.o  -o Pengo -rdynamic liblibModulos.a -lsfml-system -lsfml-window -lsfml-graphics -lsfml-network -lsfml-audio 
