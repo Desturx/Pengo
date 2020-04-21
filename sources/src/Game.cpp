@@ -68,16 +68,52 @@ void Game::events()
 
 void Game::updateGame(float elapsedTime)
 {
-    actualMap->update(player);
-    player->update(elapsedTime);
+
+
+
+    if(player->isDead())
+    {
+        if(actualMap->getPlayerLifes() > 0)
+        {
+            if(player->isXkeyPressed())
+            {
+                actualMap = new Map();
+                actualMap->loadLevel();
+                player = new Player(actualMap->getPlayerPosition().x, actualMap->getPlayerPosition().y);    
+            }
+            else
+            {
+                actualMap->subtractLife();
+                player = new Player(actualMap->getPlayerPosition().x, actualMap->getPlayerPosition().y);
+            }
+            
+        }
+        else
+        {
+        
+            actualMap = new Map();
+            actualMap->loadLevel();
+            player = new Player(actualMap->getPlayerPosition().x, actualMap->getPlayerPosition().y);    
+
+            
+
+        }
+        
+    }
+    else
+    {
+        actualMap->update(player);
+        player->update(elapsedTime);
+    }
+    
+    
 }
 
 void Game::render()
 {
     window.clear();
     window.setView(view);
-
-    player->draw(window);
     actualMap->draw(window);
+    player->draw(window);
     window.display();
 }

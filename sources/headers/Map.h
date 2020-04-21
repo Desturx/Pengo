@@ -31,8 +31,8 @@ class Map {
         int** colisions;
         
         std::vector<Enemy*> enemies;
-
-
+        int playerLifes = 3;
+        
         
     public:
         Map();
@@ -51,9 +51,10 @@ class Map {
         void checkEnemyColisions(Enemy *e);
         void checkDirection(Enemy *e);
         void checkNextSpot(Enemy *e);
+        void subtractLife();
         sf::Vector2f getViewPosition();
         sf::Vector2f getPlayerPosition();
-
+        int getPlayerLifes(){return playerLifes;};
         void update(Player *player);
         void draw(sf::RenderWindow& window);
 

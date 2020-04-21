@@ -15,6 +15,8 @@ class Player {
         float x;
         float y;
 
+        sf::Vector2f startingPoint;
+
         float movespeed;
         enum MOVE {UP,DOWN,LEFT,RIGHT};
         bool move[4];
@@ -23,8 +25,13 @@ class Player {
 
         bool walking;
         int nextspot;
-
+        bool dead = false;
+        bool hasToDie = false;
         bool playingAnimation = false;
+        bool godMode = false;
+        bool xkeyPressed = false;
+        sf::Clock godModeClock;
+
 
         // colision boxes
         sf::RectangleShape colisions[4];
@@ -45,6 +52,9 @@ class Player {
         Animation push_right = Animation(textureSrc, 16, 0.15f);
         Animation push_up = Animation(textureSrc, 16, 0.15f);
         Animation push_down = Animation(textureSrc, 16, 0.15f);
+
+        Animation deadAnimation = Animation(textureSrc, 16, 0.15f);
+
 
 
     public:
@@ -68,8 +78,12 @@ class Player {
 
         std::string getDirection(){return lastPosition;}
         bool isMoving(){return walking;};
-
+        bool isDead(){return dead;};
+        void die();
         void update(float elapsedTime);
+        bool getGodMOde(){return godMode;};
+        bool isXkeyPressed(){return xkeyPressed;};
+        sf::FloatRect getGlobalBounds(){return hitbox.getGlobalBounds();};
         void draw(sf::RenderWindow& window);
         bool hasColided = false;
         

@@ -11,11 +11,12 @@ void Map::loadLevel()
     setData();
     loadTextures();
     createSprites();
-
+    /*
     Enemy* enemy = new Enemy(6*16, 5*16);
-    // Enemy* enemy2 = new Enemy(2*16, 8*16);
+    Enemy* enemy2 = new Enemy(3*16, 1*16);
     enemies.push_back(enemy);
-    // enemies.push_back(enemy2);
+    enemies.push_back(enemy2);
+    */
 
     std::cout << "width del mapa: " << width << std::endl;
     std::cout << "heigth del mapa: " << height<< std::endl;
@@ -57,6 +58,10 @@ Map::~Map()
         delete mapSprite[i];
     }
     delete mapSprite;
+
+
+    enemies.clear();
+    dest_blocks.clear();
 }
 
 void Map::readMap()
@@ -176,20 +181,36 @@ void Map::createSprites()
         }
     }
 
+    int nenemigos = 0;
+
     for(int i = 0; i < numlayers; i++) {
         for(int j = 0; j < height; j++) {
             for(int k = 0; k < width; k++) {
-                // TO-DO check this line
+
                 gid = tileMap[i][j][k]-1;
                 colisions[j][k] = 0;
                 if(gid > 0 && gid < width*height) 
                 {
                     if(gid == 1) 
                     {
-                        // COLOCAR LOS SPRITES DE LOS BLOQUES AZULES Y MANDARLOS
-                        Block* newBlock = new Block(tileSetTexture, tilesetSprite[gid].getTextureRect(), sf::Vector2f(k*tilewidth, j*tileHeight), "NORMAL" );
-                        dest_blocks.push_back(newBlock);
-                        colisions[j][k] = 1;
+                        int prob = rand()%100 + 1;
+
+                        if(prob <= 50  && nenemigos < 2)
+                        {
+                            /* code */
+                            Enemy* enemy = new Enemy(k*tilewidth, j*tileHeight);
+                            enemies.push_back(enemy);
+                            nenemigos++;
+                        }
+                        else
+                        {
+                            // COLOCAR LOS SPRITES DE LOS BLOQUES AZULES Y MANDARLOS
+                            Block* newBlock = new Block(tileSetTexture, tilesetSprite[gid].getTextureRect(), sf::Vector2f(k*tilewidth, j*tileHeight), "NORMAL" );
+                            dest_blocks.push_back(newBlock);
+                            colisions[j][k] = 1;
+                        }
+                        
+                        
 
                     }
                     else if(gid == 3)
@@ -379,10 +400,22 @@ void Map::update(Player *player)
             checkEnemyColisions(enemies.at(i));
             checkNextSpot(enemies.at(i));
             enemies.at(i)->update();
+            if(enemies.at(i)->getGlobalBounds().intersects(player->getGlobalBounds()))
+            {
+                if(!player->getGodMOde())
+                {
+                    player->die();
+                }
+            }
         }
         
     }
 
+}
+
+void Map::subtractLife()
+{
+    playerLifes--;
 }
 
 void Map::checkDirection(Enemy* e)

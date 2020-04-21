@@ -8,7 +8,7 @@ Player::Player(int posx, int posy)
     hitbox.setFillColor(sf::Color::Red);
     x = posx;
     y = posy;
-
+    startingPoint = sf::Vector2f(x, y);
     hitbox.setPosition(x, y);
     movespeed = 2.f;
 
@@ -44,7 +44,7 @@ void Player::loadAnimations()
 
     // RUNNING ANIMATIONS
     run_up.setFrames(IntRect(16*4, 0, 16, 16), IntRect(16*5, 0, 16, 16));
-    run_down.setFrames(IntRect(16*0,0, 16, 16), IntRect(16*1, 0, 16, 16));
+    run_down.setFrames(IntRect(16*0, 0, 16, 16), IntRect(16*1, 0, 16, 16));
     run_left.setFrames(IntRect(16*2, 0, 16, 16), IntRect(16*3, 0, 16, 16));
     run_right.setFrames(IntRect(16*6, 0, 16, 16), IntRect(16*7, 0, 16, 16));
 
@@ -61,8 +61,8 @@ void Player::loadAnimations()
     push_down.setFrames(IntRect(16*0, 16, 16, 16), IntRect(16*1, 16, 16, 16));
     push_down.loopXtimes(3);
 
-
-
+    deadAnimation.setFrames(IntRect(16*0, 16*2, 16, 16), IntRect(16*1, 16*2, 16, 16));
+    deadAnimation.loopXtimes(6);
 
 }
 
@@ -215,14 +215,41 @@ void Player::moving(float elapsedTime)
 void Player::update(float elapsedTime)
 {
 
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::G))
+    {
+        if(godModeClock.getElapsedTime().asSeconds() >= .6f)
+        {
+            if(godMode)
+            {
+                godMode = false;
+                godModeClock.restart();
+                std::cout << "GOD MODE OFF" << std::endl;
+            }
+            else if(!godMode)
+            {
+                godMode = true;
+                godModeClock.restart();
+                std::cout << "GOD MODE ON" << std::endl;
+            }
+        }
+    }
+
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+    {
+        xkeyPressed = true;
+        die();
+    }
     setMovement();
     moving(elapsedTime);
-    
     if(playingAnimation) 
     {
         currentAnim->play();
         if(currentAnim->isFinished()) {
             playingAnimation = false;
+            if(hasToDie)
+            {
+                dead = true;
+            }
         }
     }
     
@@ -242,9 +269,7 @@ void Player::update(float elapsedTime)
     currentAnim->setPosition(sf::Vector2f(x, y));
     currentAnim->update();
     moveColisions();
-
     //std::cout << "se puede mover?:" << canMove[UP] << std::endl;
-    
 }
 
 void Player::moveColisions()
@@ -331,15 +356,18 @@ void Player::pushingBlocks(std::string direction)
     }
 }
 
+void Player::die()
+{
+
+    changeAnimation(&deadAnimation);
+    playingAnimation = true;
+    hasToDie = true;
+
+}
+
 void Player::draw(sf::RenderWindow& window)
 {
     //window.draw(hitbox);
     currentAnim->draw(window);
-    
-    /*
-    for(int i = 0; i < 4; i++) {
-        window.draw(colisions[i]);
-    }
-    */
 
 }
