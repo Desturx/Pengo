@@ -276,6 +276,7 @@ void Map::update(Player *player)
     // update for the blocks
 
     for(unsigned i = 0; i < dest_blocks.size(); i++) {
+        bool hasMoved = false;
 
         if(!dest_blocks.at(i)->getDestroyed())
         {
@@ -300,22 +301,36 @@ void Map::update(Player *player)
             }
             else if(dest_blocks.at(i)->getMoving()) // si el bloque se está moviendo
             {
-                dest_blocks.at(i)->update2(player);
-            }
-
-            // TO PUT THE COLISION IN THE RIGTH PLACE(JUST IN CASE)
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::T)) 
-            {
-                for(int i = 0; i < height; i ++) {
-                    for(int j = 0; j < width; j++) {
-                        colisions[i][j] = 0;
-                    }
-                }
                 int row = dest_blocks.at(i)->getPosition().y/16;
                 int col = dest_blocks.at(i)->getPosition().x/16;
                 colisions[row][col] = 1;
-
+                hasMoved = true;
+                dest_blocks.at(i)->update2(player);
             }
+            
+
+            // TO PUT THE COLISION IN THE RIGTH PLACE(JUST IN CASE)
+            if(hasMoved)
+            {
+                for(int i = 1; i < height-1; i ++) {
+                    for(int j = 1; j < width-1; j++) {
+                        colisions[i][j] = 0;
+                    }
+                }
+            }
+            int row = dest_blocks.at(i)->getPosition().y/16;
+            int col = dest_blocks.at(i)->getPosition().x/16;
+            if(dest_blocks.at(i)->getType().compare("SPECIAL") == 0)
+            {
+                colisions[row][col] = 2;
+            }
+            else
+            {
+                colisions[row][col] = 1;
+            }
+            
+
+            
         }
         else
         {   
@@ -362,6 +377,7 @@ void Map::update(Player *player)
         {
             checkDirection(enemies.at(i));
             checkEnemyColisions(enemies.at(i));
+            checkNextSpot(enemies.at(i));
             enemies.at(i)->update();
         }
         
@@ -408,6 +424,45 @@ void Map::checkDirection(Enemy* e)
     {
         e->setCanGo(4, true);
     }
+}
+
+void Map::checkNextSpot(Enemy* e)
+{
+    int row = e->getPosition().y/16;
+    int col = e->getPosition().x/16;
+    int dir = e->getDirMoving();
+    int next = e->getNextSpot()/16;
+
+
+    if(dir == 1) // is moving up
+    {
+        if(colisions[next][col] != 0)
+        {
+            e->setNextSpot((next+1)*16);
+        }
+    }
+    else if(dir == 2) // is moving rigth
+    {
+        if(colisions[row][next] != 0)
+        {
+            e->setNextSpot((next-1)*16);
+        }
+    }
+    else if (dir == 3)
+    {
+        if(colisions[next][col] != 0)
+        {
+            e->setNextSpot((next-1)*16);
+        }
+    }
+    else if(dir == 4)
+    {
+        if(colisions[row][next] != 0)
+        {
+            e->setNextSpot((next+1)*16);
+        }
+    }
+    
 }
 
 void Map::updateColisions(Block* block, std::string direction)

@@ -17,7 +17,7 @@ class Enemy {
         bool walking = false;
         bool ready = false;
         bool dead = false;
-        float movespeed = 1.8f;
+        float movespeed = 1.f;
         sf::Clock clock;
         int x, y;
         int lastX, lastY;
@@ -37,6 +37,9 @@ class Enemy {
         int getDirMoving(){return dirMoving;};
         bool getIsMoving(){return walking;};
         bool getDead(){return dead;};
+        void setPosition();
+        sf::FloatRect getGlobalBounds(){return hitbox.getGlobalBounds();};
+        void setNextSpot(int next);
         void kill();
         sf::Vector2f getPosition(){return hitbox.getPosition();};
         void draw(sf::RenderWindow &window);

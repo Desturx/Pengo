@@ -50,6 +50,7 @@ class Map {
         void updateColisions(Block *block, std::string direction);
         void checkEnemyColisions(Enemy *e);
         void checkDirection(Enemy *e);
+        void checkNextSpot(Enemy *e);
         sf::Vector2f getViewPosition();
         sf::Vector2f getPlayerPosition();
 

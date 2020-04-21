@@ -217,7 +217,6 @@ void Player::update(float elapsedTime)
 
     setMovement();
     moving(elapsedTime);
-
     
     if(playingAnimation) 
     {

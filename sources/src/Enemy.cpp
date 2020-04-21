@@ -29,12 +29,24 @@ void Enemy::kill()
 
 void Enemy::update()
 {
-    chooseDirection();
+    if(!walking)
+    {
+        chooseDirection();
+
+    }
 
     if(ready)
     {
-        moving();
     }
+    if(walking)
+    {
+        moving();
+        setPosition();
+    }
+}
+
+void Enemy::setPosition()
+{
     hitbox.setPosition(x, y);
 
 }
@@ -99,24 +111,21 @@ void Enemy::setDir()
 
 void Enemy::chooseDirection()
 {
-    //int dir = rand() % 4 + 1;
     int finalX = hitbox.getPosition().x/16;
     int finalY = hitbox.getPosition().y/16;
     
     do
     {
         setDir();
-        //std::cout << dirMoving << std::endl;
     } while (dirMoving == 0);
     
 
     if(!walking)
     {
-        //dirMoving = dir;
         ready = false;
         if(dirMoving == 1) // moves up
         {
-            std::cout << "moves up" << std::endl;
+            // std::cout << "moves up" << std::endl;
             move[UP] = true;
             walking = true;            
             if(lastY != 1 && finalY != 1)
@@ -131,18 +140,19 @@ void Enemy::chooseDirection()
                     }
                 } 
             }
-            
+            /*
             if(finalY != lastY) 
             {
                 canGo[DOWN] = true;
             }
+            */
             nextSpot = finalY*16;
             lastY = finalY;
         }
 
         if(dirMoving == 2) // moves rigth
         {
-            std::cout << "moves rigth" << std::endl;
+            // std::cout << "moves rigth" << std::endl;
             move[RIGHT] = true;
             walking = true;
             
@@ -158,12 +168,12 @@ void Enemy::chooseDirection()
                     }
                 }
             }
-
+            /*
             if(finalX != lastX)
             {
                 canGo[LEFT] = true;
             }
-
+            */
             nextSpot = finalX*16;
             lastX = finalX;
             //std::cout << "Next position: " << finalX << ", " << finalY << std::endl;
@@ -172,7 +182,7 @@ void Enemy::chooseDirection()
 
         if(dirMoving == 3) // moves down
         {
-            std::cout << "moves down" << std::endl;
+            // std::cout << "moves down" << std::endl;
             move[DOWN] = true;
             walking = true;
 
@@ -189,11 +199,12 @@ void Enemy::chooseDirection()
                 }
                 
             }
-
+            /*
             if(finalY != lastY)
             {
                 canGo[UP] = true;
             }
+            */
             nextSpot = finalY*16;
             lastY = finalY;
             //std::cout << "Next position: " << finalX << ", " << finalY << std::endl;
@@ -202,7 +213,7 @@ void Enemy::chooseDirection()
 
         if(dirMoving == 4) // moves left
         {   
-            std::cout << "moves left" << std::endl;
+            // std::cout << "moves left" << std::endl;
             move[LEFT] = true;
             walking = true;
 
@@ -218,12 +229,12 @@ void Enemy::chooseDirection()
                     } 
                 }
             }
-            
+            /*
             if(finalX != lastX)
             {
                 canGo[RIGHT] = true;
             }
-
+            */
             nextSpot = finalX*16;
             lastX = finalX;
             //std::cout << "Next position: " << finalX << ", " << finalY << std::endl;
@@ -328,6 +339,11 @@ void Enemy::stopMoving(int next, int dir)
     }
     
     
+}
+
+void Enemy::setNextSpot(int next)
+{
+    nextSpot = next;
 }
 
 void Enemy::draw(sf::RenderWindow& window)
