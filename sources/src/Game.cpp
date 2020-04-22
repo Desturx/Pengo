@@ -97,7 +97,7 @@ void Game::updateGame(float elapsedTime)
             player = new Player(actualMap->getPlayerPosition().x, actualMap->getPlayerPosition().y);    
         }   
     }
-    else if(actualMap->getTotalEnemies() <= 0 || sf::Keyboard::isKeyPressed(sf::Keyboard::N)) // check the total enemies
+    else if((actualMap->getTotalEnemies() <= 0 && actualMap->getEnemiesInScreen() <= 0)|| sf::Keyboard::isKeyPressed(sf::Keyboard::N)) // check the total enemies
     {
         int lvl = actualMap->getLvlLoaded() + 1;
         if(lvl > 2)

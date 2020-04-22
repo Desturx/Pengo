@@ -33,7 +33,7 @@ class Map {
         std::vector<Enemy*> enemies;
         int playerLifes = 3;
         int levelLoaded = 0;
-        int totalEnemies = 5;
+        int totalEnemies = 3;
 
         
     public:
@@ -60,6 +60,7 @@ class Map {
         int getLvlLoaded(){return levelLoaded;};
         int getPlayerLifes(){return playerLifes;};
         int getTotalEnemies(){return totalEnemies;};
+        int getEnemiesInScreen(){return enemies.size();};
         void update(Player *player);
         void draw(sf::RenderWindow& window);
 
