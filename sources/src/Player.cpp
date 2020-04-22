@@ -2,9 +2,9 @@
 
 Player::Player(int posx, int posy)
 {
-    std::cout << "Creating the player" << std::endl;
+    // std::cout << "Creating the player" << std::endl;
 
-    hitbox = sf::RectangleShape(sf::Vector2f(16.f, 16.f));
+    hitbox = sf::RectangleShape(sf::Vector2f(14.f, 14.f));
     hitbox.setFillColor(sf::Color::Red);
     x = posx;
     y = posy;
@@ -368,6 +368,12 @@ void Player::die()
 void Player::draw(sf::RenderWindow& window)
 {
     //window.draw(hitbox);
+    /*
+    for(int i = 0; i < 4; i++)
+    {
+        window.draw(colisions[i]);
+    }
+    */
     currentAnim->draw(window);
 
 }

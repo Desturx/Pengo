@@ -26,6 +26,12 @@ void Animation::setFrames(sf::IntRect firstFrame, sf::IntRect lastFrame)
     sprite.setOrigin(0, 0);
 }
 
+void Animation::rotateSprite(float r)
+{
+    sprite.setRotation(r);
+    rotation = r;
+    
+}
 
 void Animation::update()
 {
@@ -67,6 +73,10 @@ void Animation::update()
                 }
             }
             sprite.setTextureRect(actualF);
+            if(rotation > 0)
+            {
+                sprite.setRotation(rotation);
+            }
         }
 
         

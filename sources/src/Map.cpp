@@ -5,21 +5,17 @@ Map::Map()
 
 }
 
-void Map::loadLevel() 
+void Map::loadLevel(int lvl) 
 {
-    readMap();
+    levelLoaded = lvl;
+    readMap(lvl);
     setData();
     loadTextures();
     createSprites();
-    /*
-    Enemy* enemy = new Enemy(6*16, 5*16);
-    Enemy* enemy2 = new Enemy(3*16, 1*16);
-    enemies.push_back(enemy);
-    enemies.push_back(enemy2);
-    */
+    getWalls();
 
-    std::cout << "width del mapa: " << width << std::endl;
-    std::cout << "heigth del mapa: " << height<< std::endl;
+    // std::cout << "width del mapa: " << width << std::endl;
+    // std::cout << "heigth del mapa: " << height<< std::endl;
 }
 
 
@@ -64,9 +60,11 @@ Map::~Map()
     dest_blocks.clear();
 }
 
-void Map::readMap()
+void Map::readMap(int lvl)
 {
-    docum.LoadFile("./resources/maps/mapa1.tmx");
+    std::string path = "./resources/maps/mapa"+std::to_string(lvl)+".tmx";
+    std::cout << "RUTA MAPA: " << path << std::endl;
+    docum.LoadFile(path.c_str());
     xmlMap = docum.FirstChildElement("map");
 }
 
@@ -195,7 +193,7 @@ void Map::createSprites()
                     {
                         int prob = rand()%100 + 1;
 
-                        if(prob <= 50  && nenemigos < 2)
+                        if(prob <= 50  && nenemigos < 3)
                         {
                             /* code */
                             Enemy* enemy = new Enemy(k*tilewidth, j*tileHeight);
@@ -292,10 +290,47 @@ sf::Vector2f Map::getPlayerPosition()
     return sf::Vector2f(x, y);
 }
 
+
+void Map::getWalls()
+{
+    tinyxml2::XMLElement* object;
+
+    object = xmlMap->FirstChildElement("objectgroup");
+    std::string wallsLayer; 
+
+    while(object) {
+        wallsLayer = (std::string)object->Attribute("name");
+        
+        if(wallsLayer.compare("walls") == 0) {
+            object = object->FirstChildElement("object");
+
+            while(object)
+            {
+                float x = 0; float y = 0; float width = 0; float height = 0;
+                std::string name = (std::string)object->Attribute("name");
+
+                object->QueryFloatAttribute("x", &x);
+                object->QueryFloatAttribute("y", &y);
+                object->QueryFloatAttribute("width", &width);
+                object->QueryFloatAttribute("height",&height);
+
+
+                Block* wall = new Block(sf::Vector2f(x, y), sf::Vector2f(width, height), name);
+                dest_blocks.push_back(wall);
+                //std::cout << "block in position: " << x << ", " << y << std::endl;
+                //std::cout << "block dimesions" << width << "->width, " << height << "->height"<< std::endl;
+                object = object->NextSiblingElement("object");
+            }
+            break;
+        } else {
+            object = object->NextSiblingElement("objectgroup");
+        }
+    }
+}
+
 void Map::update(Player *player) 
 {
     // update for the blocks
-
     for(unsigned i = 0; i < dest_blocks.size(); i++) {
         bool hasMoved = false;
 
@@ -305,7 +340,26 @@ void Map::update(Player *player)
             float distanceY = player->getPosition().y - dest_blocks.at(i)->getPosition().y;
             float final = sqrt(pow(distanceX, 2)+pow(distanceY, 2));
 
-            if(final <= 16.f && !dest_blocks.at(i)->getMoving()) { // si el bloque no se mueve
+            if(dest_blocks.at(i)->getType().compare("WALL") == 0)
+            {
+                if(!player->isMoving()) {
+                    dest_blocks.at(i)->update(player);
+                }
+                if(dest_blocks.at(i)->isAnimatedWall())
+                {
+                    if(dest_blocks.at(i)->isWallFinished())
+                    {
+                        dest_blocks.at(i)->restartWallAnimation();
+                    }
+                    else
+                    {
+                        dest_blocks.at(i)->updateWallAnimation();
+                    }
+                    
+                }
+                
+
+            }else if(final <= 16.f && !dest_blocks.at(i)->getMoving()) { // si el bloque no se mueve
                 dest_blocks.at(i)->update(player);
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) 
                 {
@@ -316,6 +370,7 @@ void Map::update(Player *player)
                             updateColisions(dest_blocks.at(i), player->getDirection());
                             player->pushingBlocks(player->getDirection());
                         }
+                        
                     }
                     
                 }
@@ -330,7 +385,7 @@ void Map::update(Player *player)
             }
             
 
-            // TO PUT THE COLISION IN THE RIGTH PLACE(JUST IN CASE)
+            // TO PUT THE COLISION IN THE RIGTH PLACE
             if(hasMoved)
             {
                 for(int i = 1; i < height-1; i ++) {
@@ -388,6 +443,7 @@ void Map::update(Player *player)
         if(colisions[row][col] != 0)
         {
             enemies.at(i)->kill();
+            
         }
         if(enemies.at(i)->getDead())
         {
@@ -408,14 +464,36 @@ void Map::update(Player *player)
                 }
             }
         }
-        
+    }
+
+    if(enemies.size() < 3)
+    {
+        while (enemies.size() < 3 && totalEnemies > 0)
+        {
+            createEnemy();
+            totalEnemies--;
+        }
     }
 
 }
 
+
 void Map::subtractLife()
 {
     playerLifes--;
+}
+
+void Map::createEnemy()
+{
+
+    std::cout << "Total enemies: " <<totalEnemies << std::endl;
+    int random = rand() % (dest_blocks.size()-1);
+    sf::Vector2f enemyPos = dest_blocks.at(random)->getPosition();
+    delete dest_blocks.at(random);
+    dest_blocks.erase(dest_blocks.begin()+ random);
+
+    Enemy* newEnemy = new Enemy(enemyPos.x, enemyPos.y);
+    enemies.push_back(newEnemy);
 }
 
 void Map::checkDirection(Enemy* e)

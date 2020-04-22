@@ -17,6 +17,7 @@ class Game {
         void declarations();
         void updateGame(float elapsedTime);
         void render();
+        void moveView();
     private:
 
         sf::RenderWindow window;

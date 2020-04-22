@@ -20,6 +20,7 @@ class Animation {
         bool isPlaying = true;
         int loopNumbers = 0;
         int times = 1;
+        float rotation = 0;
 
     public:
         Animation(std::string textureName, int sprSize, float animationVelocity);
@@ -37,6 +38,6 @@ class Animation {
 
         void loopXtimes(int timesToLoop);
         void reset();
-        
+        void rotateSprite(float rotation);
         void draw(sf::RenderWindow& window);
 };

@@ -40,7 +40,7 @@ void Game::declarations()
     
     // first the map
     actualMap = new Map();
-    actualMap->loadLevel();
+    actualMap->loadLevel(1);
 
 
     player = new Player(actualMap->getPlayerPosition().x, actualMap->getPlayerPosition().y);
@@ -71,42 +71,76 @@ void Game::updateGame(float elapsedTime)
 
 
 
-    if(player->isDead())
+    if(player->isDead()) // If the player dies
     {
-        if(actualMap->getPlayerLifes() > 0)
+        if(actualMap->getPlayerLifes() > 0) // just ressets the player
         {
-            if(player->isXkeyPressed())
+            if(player->isXkeyPressed()) // in case you press the X key to die and restart
             {
+                int lvl = actualMap->getLvlLoaded();
                 actualMap = new Map();
-                actualMap->loadLevel();
+                actualMap->loadLevel(lvl);
                 player = new Player(actualMap->getPlayerPosition().x, actualMap->getPlayerPosition().y);    
             }
-            else
+            else // if the player still has lives
             {
                 actualMap->subtractLife();
                 player = new Player(actualMap->getPlayerPosition().x, actualMap->getPlayerPosition().y);
             }
             
         }
-        else
+        else // if the player has no more lives
         {
-        
+            int lvl = actualMap->getLvlLoaded();
             actualMap = new Map();
-            actualMap->loadLevel();
+            actualMap->loadLevel(lvl);
             player = new Player(actualMap->getPlayerPosition().x, actualMap->getPlayerPosition().y);    
-
-            
-
+        }   
+    }
+    else if(actualMap->getTotalEnemies() <= 0 || sf::Keyboard::isKeyPressed(sf::Keyboard::N)) // check the total enemies
+    {
+        int lvl = actualMap->getLvlLoaded() + 1;
+        if(lvl > 2)
+        {
+            lvl = 1;
         }
-        
+        actualMap = new Map();
+        actualMap->loadLevel(lvl);
+        player = new Player(actualMap->getPlayerPosition().x, actualMap->getPlayerPosition().y);
     }
     else
     {
+        moveView();
         actualMap->update(player);
         player->update(elapsedTime);
     }
-    
-    
+}
+
+void Game::moveView()
+{
+
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+    {
+        if(player->getPosition().y >= 9*16 && player->getPosition().y <= 13*16)
+        {
+            if(view.getCenter().y < 9*16)
+            {
+            view.move(sf::Vector2f(0, 2));
+            }
+        }
+    }
+    else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+    {
+
+        if(player->getPosition().y <= 9*16)
+        {
+            if(view.getCenter().y > actualMap->getViewPosition().y)
+            {
+                view.move(sf::Vector2f(0, -2));
+            }
+        }
+
+    }
 }
 
 void Game::render()

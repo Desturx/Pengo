@@ -32,20 +32,21 @@ class Map {
         
         std::vector<Enemy*> enemies;
         int playerLifes = 3;
-        
+        int levelLoaded = 0;
+        int totalEnemies = 5;
+
         
     public:
         Map();
         virtual ~Map();
-        void loadLevel();
+        void loadLevel(int lvl);
 
-        void readMap();
+        void readMap(int lvl);
         void setData();
         void loadTextures();
         void createSprites();
         void getLayers();
         void creaColisiones();
-
         void printData();
         void updateColisions(Block *block, std::string direction);
         void checkEnemyColisions(Enemy *e);
@@ -54,7 +55,11 @@ class Map {
         void subtractLife();
         sf::Vector2f getViewPosition();
         sf::Vector2f getPlayerPosition();
+        void getWalls();
+        void createEnemy();
+        int getLvlLoaded(){return levelLoaded;};
         int getPlayerLifes(){return playerLifes;};
+        int getTotalEnemies(){return totalEnemies;};
         void update(Player *player);
         void draw(sf::RenderWindow& window);
 
