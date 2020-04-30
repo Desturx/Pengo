@@ -15,11 +15,34 @@ Enemy::Enemy(float posx, float posy)
         canGo[i] = true;
         collides[i] = true;
     }
+
+    loadAnimations();
+
+    currentAnim = &eggSpawn;
+    currentAnim->setPosition(sf::Vector2f(x, y));
 }
 
 Enemy::~Enemy()
 {
-    // delete actual;
+    //delete currentAnim;
+}
+
+
+void Enemy::loadAnimations()
+{
+    using namespace sf;
+
+    // RUNNING ANIMATIONS
+    run_up.setFrames(IntRect(16*4, 16, 16, 16), IntRect(16*5, 16, 16, 16));
+    run_down.setFrames(IntRect(16*0, 16, 16, 16), IntRect(16*1, 16, 16, 16));
+    run_left.setFrames(IntRect(16*2, 16, 16, 16), IntRect(16*3, 16, 16, 16));
+    run_right.setFrames(IntRect(16*6, 16, 16, 16), IntRect(16*7, 16, 16, 16));
+
+
+    // EGG ANIMATION
+    eggSpawn.setFrames(IntRect(16*0, 0, 16, 16), IntRect(16*5, 0, 16, 16));
+    eggSpawn.loopXtimes(2); 
+
 }
 
 void Enemy::kill()
@@ -27,27 +50,50 @@ void Enemy::kill()
     dead = true;
 }
 
+void Enemy::changeAnimation(Animation* newAnimation)
+{
+    if(newAnimation != currentAnim) {
+        newAnimation->reset();
+        currentAnim = newAnimation;
+        currentAnim->setPosition(hitbox.getPosition());
+    }
+    
+}
+
 void Enemy::update()
 {
-    if(!walking)
+    if(currentAnim == &eggSpawn )
     {
-        chooseDirection();
+       if(currentAnim->isFinished())
+       {
+           changeAnimation(&run_down);
+       }
+    }
+    else
+    {
+        if(!doNothing)
+        {
+            if(!walking)
+            {
+                chooseDirection();
 
+            }
+            if(walking)
+            {
+                moving();
+                setPosition();
+            }
+        }
     }
+   
+    currentAnim->update();
 
-    if(ready)
-    {
-    }
-    if(walking)
-    {
-        moving();
-        setPosition();
-    }
 }
 
 void Enemy::setPosition()
 {
     hitbox.setPosition(x, y);
+    currentAnim->setPosition(sf::Vector2f(x, y));
 
 }
 
@@ -107,6 +153,13 @@ void Enemy::setDir()
         
     }
 
+    if(!collides[UP] && !collides[DOWN] && !collides[LEFT] && !collides[RIGHT])
+    {
+        doNothing = true;
+    }
+
+    
+
 }
 
 void Enemy::chooseDirection()
@@ -117,7 +170,7 @@ void Enemy::chooseDirection()
     do
     {
         setDir();
-    } while (dirMoving == 0);
+    } while (dirMoving == 0 || doNothing == true);
     
 
     if(!walking)
@@ -140,12 +193,6 @@ void Enemy::chooseDirection()
                     }
                 } 
             }
-            /*
-            if(finalY != lastY) 
-            {
-                canGo[DOWN] = true;
-            }
-            */
             nextSpot = finalY*16;
             lastY = finalY;
         }
@@ -168,12 +215,6 @@ void Enemy::chooseDirection()
                     }
                 }
             }
-            /*
-            if(finalX != lastX)
-            {
-                canGo[LEFT] = true;
-            }
-            */
             nextSpot = finalX*16;
             lastX = finalX;
             //std::cout << "Next position: " << finalX << ", " << finalY << std::endl;
@@ -199,12 +240,6 @@ void Enemy::chooseDirection()
                 }
                 
             }
-            /*
-            if(finalY != lastY)
-            {
-                canGo[UP] = true;
-            }
-            */
             nextSpot = finalY*16;
             lastY = finalY;
             //std::cout << "Next position: " << finalX << ", " << finalY << std::endl;
@@ -229,12 +264,7 @@ void Enemy::chooseDirection()
                     } 
                 }
             }
-            /*
-            if(finalX != lastX)
-            {
-                canGo[RIGHT] = true;
-            }
-            */
+
             nextSpot = finalX*16;
             lastX = finalX;
             //std::cout << "Next position: " << finalX << ", " << finalY << std::endl;
@@ -251,7 +281,7 @@ void Enemy::moving()
         if(move[UP])
         {
             y -= movespeed;
-
+            changeAnimation(&run_up);
             if(y <= nextSpot){
                 y = nextSpot;
                 walking = false;
@@ -262,7 +292,7 @@ void Enemy::moving()
         if(move[RIGHT])
         {
             x += movespeed;
-
+            changeAnimation(&run_right);
             if(x >= nextSpot) {
                 x = nextSpot;
                 walking = false;
@@ -273,7 +303,7 @@ void Enemy::moving()
         if(move[DOWN])
         {
             y += movespeed;
-
+            changeAnimation(&run_down);
             if(y >= nextSpot) {
                 y = nextSpot;
                 walking = false;
@@ -284,7 +314,7 @@ void Enemy::moving()
         if(move[LEFT])
         {
             x -= movespeed;
-
+            changeAnimation(&run_left);
             if(x <= nextSpot) {
                 x = nextSpot;
                 walking = false;
@@ -348,5 +378,6 @@ void Enemy::setNextSpot(int next)
 
 void Enemy::draw(sf::RenderWindow& window)
 {
-    window.draw(hitbox);
+    //window.draw(hitbox);
+    currentAnim->draw(window);
 }

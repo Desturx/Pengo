@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o"
-  "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Block.cpp.o"
-  "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Enemy.cpp" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o"
-  "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Game.cpp.o"
-  "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Map.cpp.o"
-  "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Player.cpp.o"
-  "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp" "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o"
+  "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Animation.cpp" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Animation.cpp.o"
+  "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Block.cpp" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Block.cpp.o"
+  "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Enemy.cpp" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Enemy.cpp.o"
+  "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Game.cpp" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Game.cpp.o"
+  "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Map.cpp" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Map.cpp.o"
+  "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/Player.cpp" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/Player.cpp.o"
+  "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/sources/src/tinyxml2.cpp" "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/libModulos.dir/sources/src/tinyxml2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

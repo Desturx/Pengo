@@ -179,8 +179,6 @@ void Map::createSprites()
         }
     }
 
-    int nenemigos = 0;
-
     for(int i = 0; i < numlayers; i++) {
         for(int j = 0; j < height; j++) {
             for(int k = 0; k < width; k++) {
@@ -191,25 +189,10 @@ void Map::createSprites()
                 {
                     if(gid == 1) 
                     {
-                        int prob = rand()%100 + 1;
-
-                        if(prob <= 50  && nenemigos < 3)
-                        {
-                            /* code */
-                            Enemy* enemy = new Enemy(k*tilewidth, j*tileHeight);
-                            enemies.push_back(enemy);
-                            nenemigos++;
-                        }
-                        else
-                        {
-                            // COLOCAR LOS SPRITES DE LOS BLOQUES AZULES Y MANDARLOS
-                            Block* newBlock = new Block(tileSetTexture, tilesetSprite[gid].getTextureRect(), sf::Vector2f(k*tilewidth, j*tileHeight), "NORMAL" );
-                            dest_blocks.push_back(newBlock);
-                            colisions[j][k] = 1;
-                        }
-                        
-                        
-
+                        // COLOCAR LOS SPRITES DE LOS BLOQUES AZULES Y MANDARLOS
+                        Block* newBlock = new Block(tileSetTexture, tilesetSprite[gid].getTextureRect(), sf::Vector2f(k*tilewidth, j*tileHeight), "NORMAL" );
+                        dest_blocks.push_back(newBlock);
+                        colisions[j][k] = 1;
                     }
                     else if(gid == 3)
                     {
@@ -234,6 +217,24 @@ void Map::createSprites()
             }
         }
     }
+    
+    for(int i = 0; i < 3; i++)
+    {
+        int randomrow;
+        int randomcol;
+        do
+        {
+            randomrow = rand() % 15 + 1;
+            randomcol = rand() % 13 + 1;
+        } while (colisions[randomrow][randomcol] != 0);
+
+        Enemy* newEnemy = new Enemy(randomcol*16, randomrow*16);
+        enemies.push_back(newEnemy);
+
+    }
+
+
+
 }
 
 sf::Vector2f Map::getViewPosition()
@@ -452,9 +453,12 @@ void Map::update(Player *player)
         }
         else
         {
-            checkDirection(enemies.at(i));
-            checkEnemyColisions(enemies.at(i));
-            checkNextSpot(enemies.at(i));
+            if(!enemies.at(i)->getDoNothing())
+            {
+                checkDirection(enemies.at(i));
+                checkEnemyColisions(enemies.at(i));
+                checkNextSpot(enemies.at(i));
+            }
             enemies.at(i)->update();
             if(enemies.at(i)->getGlobalBounds().intersects(player->getGlobalBounds()))
             {
@@ -473,6 +477,7 @@ void Map::update(Player *player)
             createEnemy();
             totalEnemies--;
         }
+        
     }
 
 }

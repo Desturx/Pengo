@@ -1,4 +1,4 @@
-The system is: Linux - 4.15.0-91-generic - x86_64
+The system is: Linux - 4.15.0-96-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/clang-3.8 
 Build flags: 
@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is Clang, found in "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/3.5.1/CompilerIdC/a.out"
+The C compiler identification is Clang, found in "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/3.5.1/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/clang++-3.8 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is Clang, found in "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/3.5.1/CompilerIdCXX/a.out"
+The CXX compiler identification is Clang, found in "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/3.5.1/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
+Change Dir: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_05fe0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_05fe0.dir/build.make CMakeFiles/cmTC_05fe0.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_71115/fast"
+/usr/bin/make -f CMakeFiles/cmTC_71115.dir/build.make CMakeFiles/cmTC_71115.dir/build
 make[1]: se entra en el directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_05fe0.dir/testCCompiler.c.o
-/usr/bin/clang-3.8     -o CMakeFiles/cmTC_05fe0.dir/testCCompiler.c.o   -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp/testCCompiler.c"
-Linking C executable cmTC_05fe0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05fe0.dir/link.txt --verbose=1
-/usr/bin/clang-3.8       CMakeFiles/cmTC_05fe0.dir/testCCompiler.c.o  -o cmTC_05fe0 -rdynamic 
+Building C object CMakeFiles/cmTC_71115.dir/testCCompiler.c.o
+/usr/bin/clang-3.8     -o CMakeFiles/cmTC_71115.dir/testCCompiler.c.o   -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp/testCCompiler.c"
+Linking C executable cmTC_71115
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_71115.dir/link.txt --verbose=1
+/usr/bin/clang-3.8       CMakeFiles/cmTC_71115.dir/testCCompiler.c.o  -o cmTC_71115 -rdynamic 
 make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
+Change Dir: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_dff72/fast"
-/usr/bin/make -f CMakeFiles/cmTC_dff72.dir/build.make CMakeFiles/cmTC_dff72.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_9c2fd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9c2fd.dir/build.make CMakeFiles/cmTC_9c2fd.dir/build
 make[1]: se entra en el directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_dff72.dir/CMakeCCompilerABI.c.o
-/usr/bin/clang-3.8     -o CMakeFiles/cmTC_dff72.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_dff72
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dff72.dir/link.txt --verbose=1
-/usr/bin/clang-3.8      -v CMakeFiles/cmTC_dff72.dir/CMakeCCompilerABI.c.o  -o cmTC_dff72 -rdynamic  
+Building C object CMakeFiles/cmTC_9c2fd.dir/CMakeCCompilerABI.c.o
+/usr/bin/clang-3.8     -o CMakeFiles/cmTC_9c2fd.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_9c2fd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9c2fd.dir/link.txt --verbose=1
+/usr/bin/clang-3.8      -v CMakeFiles/cmTC_9c2fd.dir/CMakeCCompilerABI.c.o  -o cmTC_9c2fd -rdynamic  
 clang version 3.8.0-2ubuntu4 (tags/RELEASE_380/final)
 Target: x86_64-pc-linux-gnu
 Thread model: posix
@@ -61,22 +61,22 @@ Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6.0.0
 Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/usr/bin/ld" -export-dynamic -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_dff72 /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crt1.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../.. -L/usr/lib/llvm-3.8/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_dff72.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtend.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crtn.o
+ "/usr/bin/ld" -export-dynamic -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_9c2fd /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crt1.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../.. -L/usr/lib/llvm-3.8/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_9c2fd.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtend.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crtn.o
 make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_dff72/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_dff72.dir/build.make CMakeFiles/cmTC_dff72.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_9c2fd/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_9c2fd.dir/build.make CMakeFiles/cmTC_9c2fd.dir/build]
   ignore line: [make[1]: se entra en el directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_dff72.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/clang-3.8     -o CMakeFiles/cmTC_dff72.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_dff72]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dff72.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/clang-3.8      -v CMakeFiles/cmTC_dff72.dir/CMakeCCompilerABI.c.o  -o cmTC_dff72 -rdynamic  ]
+  ignore line: [Building C object CMakeFiles/cmTC_9c2fd.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/clang-3.8     -o CMakeFiles/cmTC_9c2fd.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_9c2fd]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9c2fd.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/clang-3.8      -v CMakeFiles/cmTC_9c2fd.dir/CMakeCCompilerABI.c.o  -o cmTC_9c2fd -rdynamic  ]
   ignore line: [clang version 3.8.0-2ubuntu4 (tags/RELEASE_380/final)]
   ignore line: [Target: x86_64-pc-linux-gnu]
   ignore line: [Thread model: posix]
@@ -90,7 +90,7 @@ Parsed C implicit link information from above output:
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/usr/bin/ld" -export-dynamic -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_dff72 /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crt1.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../.. -L/usr/lib/llvm-3.8/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_dff72.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtend.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crtn.o]
+  link line: [ "/usr/bin/ld" -export-dynamic -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_9c2fd /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crt1.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../.. -L/usr/lib/llvm-3.8/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_9c2fd.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtend.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/bin/ld] ==> ignore
     arg [-export-dynamic] ==> ignore
     arg [-zrelro] ==> ignore
@@ -102,7 +102,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_dff72] ==> ignore
+    arg [cmTC_9c2fd] ==> ignore
     arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtbegin.o] ==> ignore
@@ -115,7 +115,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/llvm-3.8/bin/../lib] ==> dir [/usr/lib/llvm-3.8/bin/../lib]
     arg [-L/lib] ==> dir [/lib]
     arg [-L/usr/lib] ==> dir [/usr/lib]
-    arg [CMakeFiles/cmTC_dff72.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_9c2fd.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -148,16 +148,16 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
+Change Dir: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_347a1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_347a1.dir/build.make CMakeFiles/cmTC_347a1.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_d1fbc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d1fbc.dir/build.make CMakeFiles/cmTC_d1fbc.dir/build
 make[1]: se entra en el directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_347a1.dir/feature_tests.c.o
-/usr/bin/clang-3.8    -std=c11 -o CMakeFiles/cmTC_347a1.dir/feature_tests.c.o   -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/feature_tests.c"
-Linking C executable cmTC_347a1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_347a1.dir/link.txt --verbose=1
-/usr/bin/clang-3.8       CMakeFiles/cmTC_347a1.dir/feature_tests.c.o  -o cmTC_347a1 -rdynamic 
+Building C object CMakeFiles/cmTC_d1fbc.dir/feature_tests.c.o
+/usr/bin/clang-3.8    -std=c11 -o CMakeFiles/cmTC_d1fbc.dir/feature_tests.c.o   -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_d1fbc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d1fbc.dir/link.txt --verbose=1
+/usr/bin/clang-3.8       CMakeFiles/cmTC_d1fbc.dir/feature_tests.c.o  -o cmTC_d1fbc -rdynamic 
 make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
 
 
@@ -168,16 +168,16 @@ make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego ind
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
+Change Dir: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_68008/fast"
-/usr/bin/make -f CMakeFiles/cmTC_68008.dir/build.make CMakeFiles/cmTC_68008.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_bea75/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bea75.dir/build.make CMakeFiles/cmTC_bea75.dir/build
 make[1]: se entra en el directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_68008.dir/feature_tests.c.o
-/usr/bin/clang-3.8    -std=c99 -o CMakeFiles/cmTC_68008.dir/feature_tests.c.o   -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/feature_tests.c"
-Linking C executable cmTC_68008
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68008.dir/link.txt --verbose=1
-/usr/bin/clang-3.8       CMakeFiles/cmTC_68008.dir/feature_tests.c.o  -o cmTC_68008 -rdynamic 
+Building C object CMakeFiles/cmTC_bea75.dir/feature_tests.c.o
+/usr/bin/clang-3.8    -std=c99 -o CMakeFiles/cmTC_bea75.dir/feature_tests.c.o   -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_bea75
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bea75.dir/link.txt --verbose=1
+/usr/bin/clang-3.8       CMakeFiles/cmTC_bea75.dir/feature_tests.c.o  -o cmTC_bea75 -rdynamic 
 make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
 
 
@@ -188,16 +188,16 @@ make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego ind
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
+Change Dir: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d00f5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d00f5.dir/build.make CMakeFiles/cmTC_d00f5.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_6511b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6511b.dir/build.make CMakeFiles/cmTC_6511b.dir/build
 make[1]: se entra en el directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d00f5.dir/feature_tests.c.o
-/usr/bin/clang-3.8    -std=c90 -o CMakeFiles/cmTC_d00f5.dir/feature_tests.c.o   -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/feature_tests.c"
-Linking C executable cmTC_d00f5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d00f5.dir/link.txt --verbose=1
-/usr/bin/clang-3.8       CMakeFiles/cmTC_d00f5.dir/feature_tests.c.o  -o cmTC_d00f5 -rdynamic 
+Building C object CMakeFiles/cmTC_6511b.dir/feature_tests.c.o
+/usr/bin/clang-3.8    -std=c90 -o CMakeFiles/cmTC_6511b.dir/feature_tests.c.o   -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_6511b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6511b.dir/link.txt --verbose=1
+/usr/bin/clang-3.8       CMakeFiles/cmTC_6511b.dir/feature_tests.c.o  -o cmTC_6511b -rdynamic 
 make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
 
 
@@ -206,30 +206,30 @@ make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego ind
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
+Change Dir: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_985d4/fast"
-/usr/bin/make -f CMakeFiles/cmTC_985d4.dir/build.make CMakeFiles/cmTC_985d4.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_f09e6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f09e6.dir/build.make CMakeFiles/cmTC_f09e6.dir/build
 make[1]: se entra en el directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_985d4.dir/testCXXCompiler.cxx.o
-/usr/bin/clang++-3.8      -o CMakeFiles/cmTC_985d4.dir/testCXXCompiler.cxx.o -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
-Linking CXX executable cmTC_985d4
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_985d4.dir/link.txt --verbose=1
-/usr/bin/clang++-3.8        CMakeFiles/cmTC_985d4.dir/testCXXCompiler.cxx.o  -o cmTC_985d4 -rdynamic 
+Building CXX object CMakeFiles/cmTC_f09e6.dir/testCXXCompiler.cxx.o
+/usr/bin/clang++-3.8      -o CMakeFiles/cmTC_f09e6.dir/testCXXCompiler.cxx.o -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
+Linking CXX executable cmTC_f09e6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f09e6.dir/link.txt --verbose=1
+/usr/bin/clang++-3.8        CMakeFiles/cmTC_f09e6.dir/testCXXCompiler.cxx.o  -o cmTC_f09e6 -rdynamic 
 make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
+Change Dir: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f0931/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f0931.dir/build.make CMakeFiles/cmTC_f0931.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_743b8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_743b8.dir/build.make CMakeFiles/cmTC_743b8.dir/build
 make[1]: se entra en el directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_f0931.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/clang++-3.8      -o CMakeFiles/cmTC_f0931.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_f0931
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f0931.dir/link.txt --verbose=1
-/usr/bin/clang++-3.8       -v CMakeFiles/cmTC_f0931.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f0931 -rdynamic  
+Building CXX object CMakeFiles/cmTC_743b8.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/clang++-3.8      -o CMakeFiles/cmTC_743b8.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_743b8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_743b8.dir/link.txt --verbose=1
+/usr/bin/clang++-3.8       -v CMakeFiles/cmTC_743b8.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_743b8 -rdynamic  
 clang version 3.8.0-2ubuntu4 (tags/RELEASE_380/final)
 Target: x86_64-pc-linux-gnu
 Thread model: posix
@@ -241,22 +241,22 @@ Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/6.0.0
 Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/usr/bin/ld" -export-dynamic -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f0931 /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crt1.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../.. -L/usr/lib/llvm-3.8/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_f0931.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtend.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crtn.o
+ "/usr/bin/ld" -export-dynamic -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_743b8 /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crt1.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../.. -L/usr/lib/llvm-3.8/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_743b8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtend.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crtn.o
 make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_f0931/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_f0931.dir/build.make CMakeFiles/cmTC_f0931.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_743b8/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_743b8.dir/build.make CMakeFiles/cmTC_743b8.dir/build]
   ignore line: [make[1]: se entra en el directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_f0931.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/clang++-3.8      -o CMakeFiles/cmTC_f0931.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_f0931]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f0931.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/clang++-3.8       -v CMakeFiles/cmTC_f0931.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f0931 -rdynamic  ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_743b8.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/clang++-3.8      -o CMakeFiles/cmTC_743b8.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_743b8]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_743b8.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/clang++-3.8       -v CMakeFiles/cmTC_743b8.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_743b8 -rdynamic  ]
   ignore line: [clang version 3.8.0-2ubuntu4 (tags/RELEASE_380/final)]
   ignore line: [Target: x86_64-pc-linux-gnu]
   ignore line: [Thread model: posix]
@@ -270,7 +270,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/usr/bin/ld" -export-dynamic -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f0931 /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crt1.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../.. -L/usr/lib/llvm-3.8/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_f0931.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtend.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crtn.o]
+  link line: [ "/usr/bin/ld" -export-dynamic -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_743b8 /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crt1.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtbegin.o -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../.. -L/usr/lib/llvm-3.8/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_743b8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtend.o /usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/bin/ld] ==> ignore
     arg [-export-dynamic] ==> ignore
     arg [-zrelro] ==> ignore
@@ -282,7 +282,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_f0931] ==> ignore
+    arg [cmTC_743b8] ==> ignore
     arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/bin/../lib/gcc/x86_64-linux-gnu/5.4.0/crtbegin.o] ==> ignore
@@ -295,7 +295,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/llvm-3.8/bin/../lib] ==> dir [/usr/lib/llvm-3.8/bin/../lib]
     arg [-L/lib] ==> dir [/lib]
     arg [-L/usr/lib] ==> dir [/usr/lib]
-    arg [CMakeFiles/cmTC_f0931.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_743b8.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -326,16 +326,16 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
+Change Dir: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e0fb5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e0fb5.dir/build.make CMakeFiles/cmTC_e0fb5.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_4831e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4831e.dir/build.make CMakeFiles/cmTC_4831e.dir/build
 make[1]: se entra en el directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_e0fb5.dir/feature_tests.cxx.o
-/usr/bin/clang++-3.8     -std=c++14 -o CMakeFiles/cmTC_e0fb5.dir/feature_tests.cxx.o -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTC_e0fb5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e0fb5.dir/link.txt --verbose=1
-/usr/bin/clang++-3.8        CMakeFiles/cmTC_e0fb5.dir/feature_tests.cxx.o  -o cmTC_e0fb5 -rdynamic 
+Building CXX object CMakeFiles/cmTC_4831e.dir/feature_tests.cxx.o
+/usr/bin/clang++-3.8     -std=c++14 -o CMakeFiles/cmTC_4831e.dir/feature_tests.cxx.o -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_4831e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4831e.dir/link.txt --verbose=1
+/usr/bin/clang++-3.8        CMakeFiles/cmTC_4831e.dir/feature_tests.cxx.o  -o cmTC_4831e -rdynamic 
 make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
 
 
@@ -399,16 +399,16 @@ make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego ind
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
+Change Dir: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ebd50/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ebd50.dir/build.make CMakeFiles/cmTC_ebd50.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_008ad/fast"
+/usr/bin/make -f CMakeFiles/cmTC_008ad.dir/build.make CMakeFiles/cmTC_008ad.dir/build
 make[1]: se entra en el directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ebd50.dir/feature_tests.cxx.o
-/usr/bin/clang++-3.8     -std=c++11 -o CMakeFiles/cmTC_ebd50.dir/feature_tests.cxx.o -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTC_ebd50
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ebd50.dir/link.txt --verbose=1
-/usr/bin/clang++-3.8        CMakeFiles/cmTC_ebd50.dir/feature_tests.cxx.o  -o cmTC_ebd50 -rdynamic 
+Building CXX object CMakeFiles/cmTC_008ad.dir/feature_tests.cxx.o
+/usr/bin/clang++-3.8     -std=c++11 -o CMakeFiles/cmTC_008ad.dir/feature_tests.cxx.o -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_008ad
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_008ad.dir/link.txt --verbose=1
+/usr/bin/clang++-3.8        CMakeFiles/cmTC_008ad.dir/feature_tests.cxx.o  -o cmTC_008ad -rdynamic 
 make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
 
 
@@ -472,16 +472,16 @@ make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego ind
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
+Change Dir: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1d5e7/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1d5e7.dir/build.make CMakeFiles/cmTC_1d5e7.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_18067/fast"
+/usr/bin/make -f CMakeFiles/cmTC_18067.dir/build.make CMakeFiles/cmTC_18067.dir/build
 make[1]: se entra en el directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_1d5e7.dir/feature_tests.cxx.o
-/usr/bin/clang++-3.8     -std=c++98 -o CMakeFiles/cmTC_1d5e7.dir/feature_tests.cxx.o -c "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTC_1d5e7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d5e7.dir/link.txt --verbose=1
-/usr/bin/clang++-3.8        CMakeFiles/cmTC_1d5e7.dir/feature_tests.cxx.o  -o cmTC_1d5e7 -rdynamic 
+Building CXX object CMakeFiles/cmTC_18067.dir/feature_tests.cxx.o
+/usr/bin/clang++-3.8     -std=c++98 -o CMakeFiles/cmTC_18067.dir/feature_tests.cxx.o -c "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_18067
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18067.dir/link.txt --verbose=1
+/usr/bin/clang++-3.8        CMakeFiles/cmTC_18067.dir/feature_tests.cxx.o  -o cmTC_18067 -rdynamic 
 make[1]: se sale del directorio '/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/CMakeFiles/CMakeTmp'
 
 

@@ -8,7 +8,6 @@
 class Enemy {
     private:
         sf::RectangleShape hitbox;
-        // Animation *actual;
 
         enum MOVE {UP,DOWN,LEFT,RIGHT};
         bool move[4];
@@ -24,24 +23,41 @@ class Enemy {
         int nextSpot;
         int dirMoving = 0;
 
+        bool doNothing = false;
+
+        // Animations
+        Animation *currentAnim;
+        std::string textureSrc = "./resources/snowbee.png";
+
+        Animation run_left = Animation(textureSrc, 16, 0.15f);
+        Animation run_right = Animation(textureSrc, 16, 0.15f);
+        Animation run_up = Animation(textureSrc, 16, 0.15f);
+        Animation run_down = Animation(textureSrc, 16, 0.15f);
+        
+        Animation eggSpawn = Animation(textureSrc, 16, 0.15f);
+
+
     public:
         Enemy(float x, float y);
         virtual ~Enemy();
+        void loadAnimations();
         void update();
         void chooseDirection();
         void moving();
+        void changeAnimation(Animation* newAnimation);
         void stopMoving(int next, int dir);
         void setCanGo(int dir, bool value);
-        int getNextSpot(){return nextSpot;};
         void setDir();
+        void setPosition();
+        void setNextSpot(int next);
+        void kill();
+        int getNextSpot(){return nextSpot;};
         int getDirMoving(){return dirMoving;};
         bool getIsMoving(){return walking;};
         bool getDead(){return dead;};
-        void setPosition();
         sf::FloatRect getGlobalBounds(){return hitbox.getGlobalBounds();};
-        void setNextSpot(int next);
-        void kill();
         sf::Vector2f getPosition(){return hitbox.getPosition();};
+        bool getDoNothing(){return doNothing;};
         void draw(sf::RenderWindow &window);
 
 };

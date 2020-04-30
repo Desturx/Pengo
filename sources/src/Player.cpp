@@ -35,7 +35,7 @@ Player::Player(int posx, int posy)
     
 
     currentAnim = &run_down;
-    currentAnim->setPosition(sf::Vector2f(8, 8));
+    currentAnim->setPosition(sf::Vector2f(x, y));
 }
 
 void Player::loadAnimations()
@@ -61,6 +61,7 @@ void Player::loadAnimations()
     push_down.setFrames(IntRect(16*0, 16, 16, 16), IntRect(16*1, 16, 16, 16));
     push_down.loopXtimes(3);
 
+    // DEAD ANIMATION
     deadAnimation.setFrames(IntRect(16*0, 16*2, 16, 16), IntRect(16*1, 16*2, 16, 16));
     deadAnimation.loopXtimes(6);
 
@@ -156,6 +157,8 @@ void Player::moving(float elapsedTime)
     if(walking) // if the player is moving
     {
         currentAnim->play();
+
+        
 
         if(move[UP] && canMove[UP]) 
         {
@@ -264,7 +267,7 @@ void Player::update(float elapsedTime)
         }
 
     }
-    //hitbox.move(x*elapsedTime, y*elapsedTime);
+    hitbox.move(x*elapsedTime, y*elapsedTime);
     hitbox.setPosition(x, y);
     currentAnim->setPosition(sf::Vector2f(x, y));
     currentAnim->update();

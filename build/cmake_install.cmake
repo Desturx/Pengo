@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo
+# Install script for directory: /home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/sources/cmake_install.cmake")
+  include("/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/sources/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/hgfs/Universidad/FV/2a matricula/Juego individual/pengo/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/alex/Escritorio/Universidad/FV/2a matricula/Juego individual/pengo/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
